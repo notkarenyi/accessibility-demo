@@ -2,27 +2,39 @@
 
 ## Overview
 
-Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your knowledge of accessibility guidelines, in conjunction with some convenient tools, to evaluate websites on whether those needs are being fulfilled.
+Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your familiarity with accessibility guidelines, in conjunction with some convenient tools, to evaluate websites on whether those needs are being fulfilled.
 
-This workshop assumes an intermediate working knowledge of HTML and CSS. However, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you aren't familiar with some of this code yet--most of what is mentioned here has been introduced by Leo and Matt already, but some ideas are important to keep in the back of your mind for when you start to use more in-depth HTML and CSS.
+This workshop assumes an intermediate working knowledge of HTML and CSS. However, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you aren't familiar with some of this code yet--most of what is mentioned here has been introduced by Leo and Matt already, but these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
 
 ## Table of Contents
 
-* [Which Site is Worse?](#which-site-is-worse)
 * [What Does Accessibility Involve?](#what-does-accessibility-involve)
+  <!-- * [Josie Bruin's Story](#josie-bruins-story) -->
 * [Appearance](#appearance)
- * [Fonts and Font Sizes](#fonts-and-font-sizes)
- * [Zooming In](#zooming-in)
- * [Color Contrast](#color-contrast)
+  * [Fonts and Font Sizes](#fonts-and-font-sizes)
+  * [Zooming In](#zooming-in)
+  * [Color Contrast](#color-contrast)
+* [Supporting Screen Readers](#supporting-screen-readers)
+  * [Semantic HTML](#semantic-html)
+  * [Tabindex](#tabindex)
+  * [Language Specification](#language-specification)
 * [Images and Videos](#images-and-videos)
-
-## Which Site is Worse?
+  * [Alt text](#alt-text)
+  * [Transcripts](#transcripts)
+  * [Autoplay](#autoplay)
+* [Animations](#animations)
+  * [Slideshows](#slideshows)
+* [Content Reading Level](#content-reading-level)
+* [Conclusion](#conclusion)
+* [Accessibility Checkers](#accessibility-checkers
+* [Further Reading](#further-reading)
+* [Reference Links](#reference-links)
 
 ## What Does Accessibility Involve?
 
 What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words can be wrong or partially wrong, and in order to create the best experience on our websites, we should be comfortable with constantly adapting to the highest standards for accessibility. (This tends to be a theme across computer programming.) 
 
-For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But many internet users experience a range of needs that limit what you may think of as "normal" web usage. These needs may include colorblindness, use of a screen reader (for blind people, people with motor disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. Why is it important to pay attention to all these needs?
+For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for many internet users, these features can make or break their experience with your website. These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. Why is it important to pay attention to all these needs, you ask?
 
 1. Help people with all kinds of needs use and enjoy your website
 1. Increase traffic and user satisfaction
@@ -30,7 +42,20 @@ For most web developers and many users, poor accessibility features are an incon
 
 Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) love the design part of web development, but sometimes we get too caught up in what looks "cool" and not what is actually legible or usable. Good web design, like any kind of design, is a balance of both aesthetic and function.
 
-Now we're ready to dive into the basic foundations of accessibility!
+<!--
+### Josie Bruin's Story
+
+To start thinking about what I mean by "different needs," let's take an example of one hypothetical user's experience. 
+
+Of the two sites below, which is better?
+
+![]()
+![]()
+
+Without knowing how users can interact with the websites, it's hard to say for sure. But let's assume that Josie Bruin, who uses a screen reader because she is legally blind, visits Website A. If Website A uses semantic tags, alt text, and language specification, and Website B does not, then Josie's experience on Website A is going to be much better than her experience on Website B. 
+
+But what do all these terms mean? Good question--we're ready to dive into the foundations of accessibility.
+-->
 
 ## Appearance
 One of the most straightforward places to start is the visual appearance of your website, since most of us are familiar with what's "good" versus what's not so good. 
@@ -51,6 +76,7 @@ Have you ever visited a mobile or desktop website with an uncomfortably small or
 Fonts can still look too small or too large at these sizes, so adjust as needed. 
 
 ```css
+#CSS file
   .serif {
     font-size: 16px;
     font-family: Times New Roman;
@@ -66,9 +92,15 @@ On the same note, do not use display (aka fancy) fonts in body text. This is pai
 
 ### Zooming In
 
-Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. Avoid making the user have to scroll horizontally--the text should resize within the window.
+Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. 
 
-```
+Avoid making the user have to scroll horizontally--the text should wrap to fit the window size. `whitespace: normal` should be the default, but if text is not wrapping correctly, try explicitly setting this property.
+
+```css
+#CSS file
+p {
+  whitespace: normal;
+}
 ```
 
 ### Color Contrast 
@@ -76,6 +108,7 @@ Users with visual impairments, such as the elderly, often need to zoom in on 16p
 Another very important consideration in terms of appearance is color contrast. Always use a color-contrast checker to ensure that your text meets a good contrast ratio. Here's one of the most common examples of bad color contrast that I see around the web:
 
 ```css
+#CSS file
   .bad {
     color: #ffffff
     background-color: #fee851
@@ -91,39 +124,7 @@ Similarly, use a color-blindness checker to simulate how your website would look
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
-```
-```
-
-## Images and Videos
-
-Always, always, always provide alt text for images that have semantic meaning on your website. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students definitely does.
-
-```html 
-<!-- HTML file -->
- <img href="/images/graph.jpg" alt="Graph of average daily cups of coffee drunk by university students. Source: College University, 2008.">
-```
-
-If possible, provide closed captions or transcripts for embedded videos. 
-
-```html
-
-```
-
-Disable autoplay for embedded videos. Auto-play can be disorienting for users, as well as annoying (have you ever tried to find that one tab that randomly starts playing music? Yeah).
-
-```html
-```
-
-## Animations
-
-Many people are prone to seizures and can be harmed by websites with too much animation. This means limiting the number of GIFs, and avoiding flashing elements at all costs (the w3 standard is three flashes or less per second).
-
-Allow users to pause and navigate slideshows--it can be distracting to have a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide.
-
-```html
-```
-
-Also, complex scrolling (parallax scrolling is a popular one that developers should be careful with) can be disorienting.
+![image]()
 
 ## Supporting Screen Readers
 
@@ -131,9 +132,9 @@ This is probably the most important topic covered in this workshop--not because 
 
 ### Semantic HTML
 
-You might have seen Matt and Leo use the `nav` tag or other interesting tags before. HTML has special tags for common structural elements on a website, from `nav` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to correctly navigate websites. You'll see that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
+You might have seen Matt and Leo use the `nav` tag or other interesting tags before. HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to correctly navigate websites. You'll see that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
-Did you know that `h1`, `h2`, etc. are actually semantic tags? It is very bad practice to use heading tags to control font size and weight--that's what CSS is for! Instead, only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
+Did you know that `h1`, `h2`, etc. are actually semantic tags? It is bad practice to use heading tags to control font size and weight--that's what CSS is for! Instead, only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
 
 ```html
 <!-- bad -->
@@ -155,6 +156,20 @@ Tabindex refers to tabbing through the buttons or links (or "focusable" elements
 This also means that button and link text should be descriptive. Avoid "click here" and other phrases without context, since they can be confusing to people who are only reading the links on a site.
 
 ```html
+<!-- HTML file -->
+
+<!-- bad -->
+<p>
+  Create an account below!
+</p>
+<button>
+     Click here
+</button>
+
+<!-- good -->
+<button>
+     Create account
+</button>
 ```
 
 ### Language Specification
@@ -167,6 +182,57 @@ Screen readers are preprogrammed voices that read page content for users. They d
   <!-- Your website goes here -->
 </html>
 ```
+## Images and Videos
+
+Embedded media can be difficult to consume for many populations and for many reasons. Visual elements usually require a text alternative.
+
+### Alt text
+
+Alt text is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
+
+Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. If nothing new is added, then `alt = ""` is okay. 
+
+```html 
+<!-- HTML file -->
+ <img href = "/images/graph.jpg" alt = "Average daily cups of coffee drunk by university students. Source: College University, 2008.">
+```
+
+![image]()
+
+Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. Be accurate when describing its content--don't provide information that is not present in the media. 
+
+The only instance in which alt text can be redundant with surrounding text is when an image functions as a link. In that case, the alt text must be present to act as a link, so an empty `alt` attribute is not allowed. Again, do not write "Link to..." as it is clear that the image is a link.
+
+Videos do not support `alt` attributes. Use `title` instead or provide an external link to the video. 
+
+### Transcripts 
+
+People with hearing impairments and English language learners often have difficulty following audio or video elements. Others also find transcripts and subtitles useful in noisy environments or when skipping through a media element to find a specific part. 
+
+WebVTT files are the standard for synchronized closed captions. Include these by using the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. `srclang` uses a language code to specify the type of data used (see [Language Specification](#language-specification)), while `label` is meant to help the user choose the correct subtitles.
+
+Include the `controls` attribute to allow access to volume controls, video pause and playback, existing subtitles and transcripts, and more.
+
+```html
+<video controls width = "500">
+  <source src = "/resources/video.mp4" type = "video/mp4">
+  <track src = "/resources/english.vtt" kind = "subtitles" srclang = "en" label = "English">
+  <track src = "/resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish">
+</video>
+```
+
+### Autoplay
+
+Disable autoplay for embedded videos. Autoplay can be disorienting for users, as well as annoying (have you ever tried to find that one tab that randomly starts playing music? Yeah).
+
+Actually, the `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay = false` will not work.
+
+## Animations
+
+Many people are prone to seizures and can be harmed by websites with too much animation. This means limiting the number of GIFs, and avoiding flashing elements at all costs (the w3 standard is three flashes or less per second).
+
+### Slideshows
+Allow users to pause and navigate slideshows--it can be distracting to have a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide. Since slideshows are usually made using JavaScript, we won't cover how to do it here.
 
 ## Content Reading Level 
 
@@ -178,7 +244,7 @@ Correct spelling and grammar help make sure that everyone is on the same page an
 
 ## Conclusion
 
-It might seem like there are suddenly a million things to worry about that you didn't think about before. That's okay: don't sweat it if you can't remember everything. What's important is that you start looking at websites you use and websites you create with a critical eye, asking: "How does this meet accessibility guidelines?", "How might this website be hard for some people to use?", and "What can I do to make my website functional and enjoyable for everyone?" 
+It might seem like there are suddenly a million things to worry about that you didn't think about before. That's okay: don't sweat it if you can't remember everything. What's important is that you start looking at websites you use and websites you create with a critical eye, asking: "How does this meet accessibility guidelines?", "How might this website be hard for some people to use?", and "What can I do to make my website functional and enjoyable for everyone?" Once you've identified a problem, you can always Google the solution to jog your memory.
 
 Here are the topics we've covered:
 * Fonts and font sizes
@@ -210,13 +276,19 @@ Never rely on a machine to "check off" accessibility requirements. (See [this bl
 ## Further Reading
 
 * [Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
-* [Yale guidelines](https://usability.yale.edu/web-accessibility/articles/readability)
-* [w3 guidelines](https://www.w3.org/TR/WCAG21/#reading-level)
+* [Yale guidelines](https://usability.yale.edu/web-accessibility/articles)
+* [w3 guidelines](https://www.w3.org/TR/WCAG21)
 
 ## Reference Links
+
+Mozilla Developer Network has been abbreviated as MDN.
 
 * [Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
 * [Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
 * [Tabindex (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 * [Hyperlink accessibility & tab index (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
 * [Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
+* [Video attributes (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+* [WebVTT files (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
+* [Track tag for subtitles (w3)](https://www.w3schools.com/tags/tag_track.asp)
+* [Alt text (WebAIM)](https://webaim.org/techniques/alttext/)
