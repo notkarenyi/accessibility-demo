@@ -4,13 +4,13 @@
 
 Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers, and how to look at a website from multiple angles using your knowledge of accessibility guidelines, as well as a few useful tools. 
 
-For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But a large fraction of internet users experience a range of needs that limit what many think of as "normal" web usage. These needs may include colorblindness, use of a screen reader (for blind people, people with motor disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. There are three motives for paying close attention to different needs:
+For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But many internet users experience a range of needs that limit what you may think of as "normal" web usage. These needs may include colorblindness, use of a screen reader (for blind people, people with motor disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. Why is it important to pay attention to all these needs?
 
 1. Help people with all kinds of needs use and enjoy your website
 1. Increase traffic and user satisfaction
 1. Make the experience better for everyone else as well
 
-What comes to your mind when you think of the word "disabled" or the word "accessible"? Our immediate assumptions about these words can be wrong or partially wrong, and in order to create the best experience on our websites, we should be comfortable with constantly adapting to the highest standards for accessibility. (This tends to be a theme across computer programming.) Everyone benefits from websites that successfully follow accessibility guidelines. 
+What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words can be wrong or partially wrong, and in order to create the best experience on our websites, we should be comfortable with constantly adapting to the highest standards for accessibility. (This tends to be a theme across computer programming.) Everyone benefits from websites that follow accessibility guidelines. 
 
 Here, we'll cover the basics (aka, bare minimum) of accessibility. Don't worry if you aren't familiar with some of this code yet--most of what is mentioned here has been introduced by Leo and Matt already, but some ideas are important to keep in the back of your mind for when you start to use more in-depth HTML and CSS.
 
@@ -200,23 +200,23 @@ For more practice, check out our [portfolio task]()!
 
 Never rely on a machine to "check off" accessibility requirements. (See [this blog post](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/) for an example of how machines can make mistakes sometimes.) But I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
 
-[WAVE browser extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
-[w3 evaluation tools](https://www.w3.org/WAI/ER/tools/)
-[Color blindness checker](http://color-blindness.com/coblis-color-blindness-simulator/)
-[Color contrast checker ](http://webaim.org/resources/contrastchecker/)
-[Accessibility checker](http://wave.webaim.org)
-[Hemingway reading level checker](http://www.hemingwayapp.com/)
+* [WAVE browser extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
+* [w3 evaluation tools](https://www.w3.org/WAI/ER/tools/)
+* [Color blindness checker](http://color-blindness.com/coblis-color-blindness-simulator/)
+* [Color contrast checker ](http://webaim.org/resources/contrastchecker/)
+* [Accessibility checker](http://wave.webaim.org)
+* [Hemingway reading level checker](http://www.hemingwayapp.com/)
 
 ## Further Reading
 
-[Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
-[Yale guidelines](https://usability.yale.edu/web-accessibility/articles/readability)
-[w3 guidelines](https://www.w3.org/TR/WCAG21/#reading-level)
+* [Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
+* [Yale guidelines](https://usability.yale.edu/web-accessibility/articles/readability)
+* [w3 guidelines](https://www.w3.org/TR/WCAG21/#reading-level)
 
 ## Reference Links
 
-[Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
-[Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
-[Tabindex (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
-[Hyperlink accessibility & tab index (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
-[Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
+* [Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+* [Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
+* [Tabindex (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
+* [Hyperlink accessibility & tab index (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
+* [Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
