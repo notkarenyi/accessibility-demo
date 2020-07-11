@@ -16,13 +16,13 @@ Here, we'll cover the basics (aka, bare minimum) of accessibility. Don't worry i
 
 ## Table of Contents
 
-* [Which Site is Worse?] (#which-site-is-worse)
-* [What Does Accessibility Involve?] (#what-does-accessibility-involve)
-* [Appearance] (#appearance)
- * [Fonts and Font Sizes] (#fonts-and-font-sizes)
- * [Zoom University] (#zoom-university)
- * [Color Contrast] (#color-contrast)
-* [Images and Videos] (#images-and-videos)
+* [Which Site is Worse?](#which-site-is-worse)
+* [What Does Accessibility Involve?](#what-does-accessibility-involve)
+* [Appearance](#appearance)
+ * [Fonts and Font Sizes](#fonts-and-font-sizes)
+ * [Zooming In](#zooming-in)
+ * [Color Contrast](#color-contrast)
+* [Images and Videos](#images-and-videos)
 
 ## Which Site is Worse?
 
@@ -48,10 +48,23 @@ Have you ever visited a mobile or desktop website with an uncomfortably small or
     font-size: 18px;
   }
 ```
+Fonts can still look too small or too large at these sizes, so adjust as needed. 
+
+```css
+  .serif {
+    font-size: 16px;
+    font-family: Times New Roman;
+  }
+  
+  .sans-serif {
+    font-size: 16px;
+    font-family: Helvetica;
+  }
+```
 
 On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like the curve on the ends of the Ts in this document.) Sans serif fonts like Arial are also popular because they look sleek and modern. A good rule of thumb is to copy a paragraph of an article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
 
-### Zoom University
+### Zooming In
 
 Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. Avoid making the user have to scroll horizontally--the text should resize within the window.
 
@@ -120,7 +133,7 @@ This is probably the most important topic covered in this workshop--not because 
 
 You might have seen Matt and Leo use the `nav` tag or other interesting tags before. HTML has special tags for common structural elements on a website, from `nav` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to correctly navigate websites. You'll see that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
-Did you know that `h1`, `h2`, etc. are actually semantic tags? It is very bad practice to use heading tags to control font size and weight--that's what CSS is for! Instead, only use these as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
+Did you know that `h1`, `h2`, etc. are actually semantic tags? It is very bad practice to use heading tags to control font size and weight--that's what CSS is for! Instead, only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
 
 ```html
 <!-- bad -->
@@ -144,7 +157,18 @@ This also means that button and link text should be descriptive. Avoid "click he
 ```html
 ```
 
-## Language 
+### Language Specification
+
+Screen readers are preprogrammed voices that read page content for users. They don't automatically know what language a website is written in (by language I mean human language, not programming language), which can result in some awkward pronunciation for foreign-language content. Specify the main language of a page using the appropriate language code:
+
+```html
+<!-- HTML file -->
+<html lang = "en">
+  <!-- Your website goes here -->
+</html>
+```
+
+## Content Reading Level 
 
 Although web developers often aren't responsible for writing site content, 1) they can be and 2) they are often asked for feedback on content.
 
@@ -157,7 +181,42 @@ Correct spelling and grammar help make sure that everyone is on the same page an
 Don't sweat it if you can't remember all of this. What's important is that you start looking at websites you use and websites you create with a critical eye, asking: "How does this meet accessibility needs?" "How might this website be hard for some people to use?" "What can I do to make my website functional and enjoyable for everyone?" 
 
 Here are the topics we've covered:
+* Fonts and font sizes
+* Allowing zooming in
+* Color contrast
+* Alt text and video transcripts
+* Disabling video autoplay
+* Limiting animation and flashing effects
+* Slideshow navigation
+* Semantic HTML
+* Tabindex and labeling links
+* Content reading level
 
-## Resources to Save for Later
+Accessibility should not be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. Keep learning and improving the experience for all users on all websites :) 
 
-Never rely on a machine to "check off" accessibility requirements. (See this blog post for an example of how machines can make mistakes sometimes.) But I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
+For more practice, check out our [portfolio task]()!
+
+## Accessibility Checkers
+
+Never rely on a machine to "check off" accessibility requirements. (See [this blog post](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/) for an example of how machines can make mistakes sometimes.) But I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
+
+[WAVE browser extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
+[w3 evaluation tools](https://www.w3.org/WAI/ER/tools/)
+[Color blindness checker](http://color-blindness.com/coblis-color-blindness-simulator/)
+[Color contrast checker ](http://webaim.org/resources/contrastchecker/)
+[Accessibility checker](http://wave.webaim.org)
+[Hemingway reading level checker](http://www.hemingwayapp.com/)
+
+## Further Reading
+
+[Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
+[Yale guidelines](https://usability.yale.edu/web-accessibility/articles/readability)
+[w3 guidelines](https://www.w3.org/TR/WCAG21/#reading-level)
+
+## Reference Links
+
+[Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+[Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
+[Tabindex (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
+[Hyperlink accessibility & tab index (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
+[Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
