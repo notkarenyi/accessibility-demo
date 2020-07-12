@@ -19,7 +19,8 @@ div {
     width: 80%;
 }
 
-#main {
+#content {
+    padding-top: 70px;
     padding-bottom: 100px;
 }
 
@@ -63,6 +64,6 @@ img, video {
     max-width: 100%;
 }
 
-.inline {
+h1, h2, .inline {
     display: inline;
 }
