@@ -19,7 +19,7 @@ html {
 body {
     color: white;
     font-family: Chewy, sans-serif;
-    background-image: url(/accessibility-resources/background.jpg);
+    background-image: url(accessibility-resources/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
