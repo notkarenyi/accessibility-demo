@@ -154,11 +154,11 @@ Always use a color-contrast checker to ensure that your text and visual elements
 }
 ```
 
-![Output of above code: the first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](resources/color-contrast.png)
+![Output of above code: the first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](/resources/color-contrast.png)
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
-![image]()
+![Some text placed over an image, which is very difficult to read.](/resources/image-text.png)
 
 ## Supporting Screen Readers
 
@@ -187,8 +187,8 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice
   <a href= "/about">About</a>
 </nav>
 ```
-![Output of above code: two links labeled Home and About](resources/semantic-html.png)
-![Output of above code: two links labeled Home and About](resources/semantic-html.png)
+![Output of above code: two links labeled Home and About](/resources/semantic-html.png)
+![Output of above code: two links labeled Home and About](/resources/semantic-html.png)
 
 Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
