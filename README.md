@@ -67,10 +67,11 @@ Have you ever visited a mobile or desktop website with an uncomfortably small or
 
 ```css
 /* CSS file */
+/* 768px is a common breakpoint for smartphones */
   @media screen and (max-width: 768px) {
     font-size: 16px;
   }
-  
+
   @media screen and (min-width: 769px) {
     font-size: 18px;
   }
@@ -81,14 +82,21 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
 /* CSS file */
   .serif {
     font-size: 16px;
-    font-family: Times New Roman;
-  }
-  
-  .sans-serif {
-    font-size: 16px;
-    font-family: Helvetica;
+    font-family: Calibri;
   }
 ```
+
+![Output of above code: a relatively smaller font, even at 16px](resources/calibri.png)
+
+```css
+/* CSS file */
+  .sans-serif {
+    font-size: 16px;
+    font-family: Lucida Bright;
+  }
+```
+
+![Output of above code: a relatively larger font, even at 16px](resources/lucida.png)
 
 On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. 
 
@@ -103,9 +111,20 @@ Avoid making the user have to scroll horizontally--the text should wrap to fit t
 ```css
 /* CSS file */
 p {
-  whitespace: normal;
+  white-space: nowrap;
 }
 ```
+
+![Output of above code: text that cuts off at the edge.](resources/nowrap.png)
+
+```css
+/* CSS file */
+p {
+  white-space: normal;
+}
+```
+
+![Output of above code: text that does not cut off at the edge.](resources/normal.png)
 
 ### Color Contrast 
 
@@ -115,19 +134,27 @@ Always use a color-contrast checker to ensure that your text and visual elements
 
 ```css
 /* CSS file */
-  .bad {
-    color: #ffffff
-    background-color: #fee851
-  }
-  
-  .good {
-    color: #000000
-    background-color: #fee851
-  }
+.bad {
+  color: #ffffff;
+  background-color: #fee851;
+  width: 100px;
+  padding: 10px;
+}
+.also-bad {
+  color: #3f82fd;
+  background-color: #fee851;
+  width: 100px;
+  padding: 10px;
+}
+.good {
+  color: #000000;
+  background-color: #fee851;
+  width: 100px;
+  padding: 10px;
+}
 ```
 
-![image]()
-![image]()
+![Output of above code: the first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](resources/color-contrast.png)
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
@@ -139,23 +166,31 @@ This is probably the most important topic covered in this workshop - considerati
 
 ### Semantic HTML
 
-HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to  navigate websites. You'll see that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
+HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to  navigate websites. 
 
 Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight - that's what CSS is for! Only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
 
 ```html
+<!-- HTML file -->
 <!-- bad -->
 <div class = "nav">
- <a href= "/home">
- <a href= "/about">
+ <a href= "/home">Home</a>
+ <a href= "/about">About</a>
 </div>
-   
+```
+
+```html
+<!-- HTML file -->
 <!-- good -->
 <nav>
-  <a href= "/home">
-  <a href= "/about">
+  <a href= "/home">Home</a>
+  <a href= "/about">About</a>
 </nav>
 ```
+![Output of above code: two links labeled Home and About](resources/semantic-html.png)
+![Output of above code: two links labeled Home and About](resources/semantic-html.png)
+
+Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
 ### Tabindex
 
@@ -165,22 +200,26 @@ This also means that button and link text should be descriptive. Avoid "click he
 
 ```html
 <!-- HTML file -->
-
 <!-- bad -->
 <p>
-  Create an account below!
+  Log in below!
 </p>
 <button>
      Click here
 </button>
+```
 
+![Output of code above: a noninformative button that says Click here!](resources/click-button.png)
+
+```html
+<!-- HTML file -->
 <!-- good -->
 <button>
-     Create account
+     Log in
 </button>
 ```
 
-![]()
+![Output of code above: an informative button that says Log in](resources/login-button.png)
 
 ### Language Specification
 
@@ -200,16 +239,16 @@ Embedded media can be difficult to consume for many populations and for many rea
 
 You've seen alt text before, which is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
 
-Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. 
+Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. 
 
 If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt` attribute altogether.) 
 
 ```html 
 <!-- HTML file -->
- <img href = "/images/graph.jpg" alt = "Average daily cups of coffee drunk by university students. Source: College University, 2008." />
+ <img href = "/images/acm-logo.png" alt = "ACM logo" />
 ```
 
-![image]()
+![ACM logo](/images/acm-logo.png)
 
 Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
