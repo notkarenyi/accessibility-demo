@@ -64,6 +64,7 @@ div {
     height: 100px;
     position: relative;
     width: 100%;
+    margin: 0;
 }
 
 #footer a {
@@ -86,8 +87,8 @@ a:hover {
     padding: 10px;
 }
 
-img, video {
-    max-width: 100%;
+img, video, iframe {
+    width: 100%;
 }
 
 .inline {
