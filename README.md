@@ -286,13 +286,15 @@ Never rely on a machine to "check off" accessibility requirements. (See [this bl
 
 ## Further Reading
 
+Want to learn about AA versus AAA standards, input errors, and more? Check out these comprehensive accessibility guides from top-tier institutions.
+
 * [Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
 * [Yale guidelines](https://usability.yale.edu/web-accessibility/articles)
 * [w3 guidelines](https://www.w3.org/TR/WCAG21)
 
 ## Reference Links
 
-Mozilla Developer Network has been abbreviated as MDN.
+These articles will save you some googling on the topics we've covered today. (Mozilla Developer Network has been abbreviated as MDN.)
 
 * [Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
 * [Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
