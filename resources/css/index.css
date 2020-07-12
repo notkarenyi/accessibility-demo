@@ -15,6 +15,10 @@ body {
     margin: 0;
 }
 
+div {
+    margin: 20px;
+}
+
 #content {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -32,15 +36,19 @@ body {
     position: fixed;
     width: 100%;
     height: 100px;
-    margin: 0;
+    top: 0;
 }
 
 #nav img, #nav h1 {
     float: left;
+    margin: 10px;
 }
 
 #nav a {
     float: right;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 10px;
 }
 
 #footer {
@@ -50,7 +58,11 @@ body {
     height: 100px;
     position: relative;
     width: 100%;
-    padding: 20px;
+}
+
+#footer a {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 a {
