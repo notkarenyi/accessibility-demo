@@ -16,7 +16,7 @@ body {
 }
 
 div {
-    margin: 20px;
+    margin: 50px 0;
 }
 
 #content {
@@ -37,11 +37,17 @@ div {
     width: 100%;
     height: 100px;
     top: 0;
+    margin: 0;
 }
 
 #nav img, #nav h1 {
     float: left;
     margin: 10px;
+}
+
+#nav h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #nav a {
@@ -63,6 +69,7 @@ div {
 #footer a {
     margin-top: 40px;
     margin-bottom: 40px;
+    position: absolute;
 }
 
 a {
