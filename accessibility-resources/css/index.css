@@ -1,0 +1,49 @@
+html {
+    font-size: 100%;
+    width: 100%;
+}
+
+#nav {
+    background-color: #B0FF72;
+    color: white;
+    font-family: Fredoka One, sans-serif;
+    position: fixed;
+}
+
+#footer {
+    background-color: #B0FF72;
+    color: white;
+    font-family: Fredoka One, sans-serif;
+}
+
+body {
+    color: white;
+    font-family: Chewy, sans-serif;
+    background-image: url(/accessibility-resources/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    color: #B0FF72;
+}
+
+.button {
+    background-color: #FF2EF7;
+    padding: 10px;
+}
+
+div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    max-width: 100%;
+}
