@@ -4,7 +4,7 @@
 
 Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your familiarity with accessibility guidelines, in conjunction with some convenient tools, to evaluate websites on whether those needs are being fulfilled.
 
-This workshop assumes an intermediate working knowledge of HTML and CSS. However, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you aren't familiar with some of this code yet--most of what is mentioned here has been introduced by Leo and Matt already, but these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
+This workshop assumes an intermediate working knowledge of HTML and CSS. However, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you aren't familiar with some of this code yet - most of what is mentioned here has been introduced by Leo and Matt already, but these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
 
 ## Table of Contents
 
@@ -23,10 +23,9 @@ This workshop assumes an intermediate working knowledge of HTML and CSS. However
   * [Transcripts](#transcripts)
   * [Autoplay](#autoplay)
 * [Animations](#animations)
-  * [Slideshows](#slideshows)
 * [Content Reading Level](#content-reading-level)
 * [Conclusion](#conclusion)
-* [Accessibility Checkers](#accessibility-checkers
+* [Accessibility Checkers](#accessibility-checkers)
 * [Further Reading](#further-reading)
 * [Reference Links](#reference-links)
 
@@ -65,6 +64,7 @@ One of the most straightforward places to start is the visual appearance of your
 Have you ever visited a mobile or desktop website with an uncomfortably small or weirdly large font? Pretty annoying, right? Fortunately, someone was smart enough to come up with standard font sizes for mobile and desktop:
 
 ```css
+/* CSS file */
   @media screen and (max-width: 768px) {
     font-size: 16px;
   }
@@ -76,7 +76,7 @@ Have you ever visited a mobile or desktop website with an uncomfortably small or
 Fonts can still look too small or too large at these sizes, so adjust as needed. 
 
 ```css
-#CSS file
+/* CSS file */
   .serif {
     font-size: 16px;
     font-family: Times New Roman;
@@ -97,7 +97,7 @@ Users with visual impairments, such as the elderly, often need to zoom in on 16p
 Avoid making the user have to scroll horizontally--the text should wrap to fit the window size. `whitespace: normal` should be the default, but if text is not wrapping correctly, try explicitly setting this property.
 
 ```css
-#CSS file
+/* CSS file */
 p {
   whitespace: normal;
 }
@@ -105,10 +105,12 @@ p {
 
 ### Color Contrast 
 
-Another very important consideration in terms of appearance is color contrast. Always use a color-contrast checker to ensure that your text meets a good contrast ratio. Here's one of the most common examples of bad color contrast that I see around the web:
+Color blindness affects 1 in 12 men and 1 in 200 women worldwide. Use a color-blindness checker to simulate how your website would look to someone with color blindness. 
+
+Always use a color-contrast checker to ensure that your text and visual elements meet a good contrast ratio, in order to help people read and see content clearly. Here's one of the most common examples of bad color contrast that I see around the web:
 
 ```css
-#CSS file
+/* CSS file */
   .bad {
     color: #ffffff
     background-color: #fee851
@@ -120,7 +122,8 @@ Another very important consideration in terms of appearance is color contrast. A
   }
 ```
 
-Similarly, use a color-blindness checker to simulate how your website would look to someone with color blindness. Fun fact: color blindness affects 1 in 12 men and 1 in 200 women worldwide. 
+![image]()
+![image]()
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
@@ -128,13 +131,13 @@ Be very careful when placing text over images. In fact, avoid placing text over 
 
 ## Supporting Screen Readers
 
-This is probably the most important topic covered in this workshop--not because blind people and people with learning disabilities are the most important, but because consideration of screen readers is the hardest to spot. The following are invisible to the average user, but can make or break the site experience for a screen-reader user.
+This is probably the most important topic covered in this workshop - consideration of screen readers is almost impossible to spot visually. The following are invisible to the average user, but can make or break the site experience for someone using a screen reader.
 
 ### Semantic HTML
 
-You might have seen Matt and Leo use the `nav` tag or other interesting tags before. HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to correctly navigate websites. You'll see that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
+HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to  navigate websites. You'll see that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
-Did you know that `h1`, `h2`, etc. are actually semantic tags? It is bad practice to use heading tags to control font size and weight--that's what CSS is for! Instead, only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
+Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight - that's what CSS is for! Only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
 
 ```html
 <!-- bad -->
@@ -142,6 +145,7 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It is bad practic
  <a href= "/home">
  <a href= "/about">
 </div>
+   
 <!-- good -->
 <nav>
   <a href= "/home">
@@ -199,7 +203,11 @@ Always, always, always provide alt text for images that have semantic meaning. F
 
 ![image]()
 
-Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. Be accurate when describing its content--don't provide information that is not present in the media. 
+Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
+
+Be accurate when describing its content--don't provide information that is not present in the media. 
+
+Write alt text for icons in the same way you would for images, since some icons (such as file-type icons) add context, while decorative icons do not.
 
 The only instance in which alt text can be redundant with surrounding text is when an image functions as a link. In that case, the alt text must be present to act as a link, so an empty `alt` attribute is not allowed. Again, do not write "Link to..." as it is clear that the image is a link.
 
@@ -209,11 +217,14 @@ Videos do not support `alt` attributes. Use `title` instead or provide an extern
 
 People with hearing impairments and English language learners often have difficulty following audio or video elements. Others also find transcripts and subtitles useful in noisy environments or when skipping through a media element to find a specific part. 
 
-WebVTT files are the standard for synchronized closed captions. Include these by using the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. `srclang` uses a language code to specify the type of data used (see [Language Specification](#language-specification)), while `label` is meant to help the user choose the correct subtitles.
+WebVTT files are the standard for synchronized closed captions. Include these with the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. 
+
+`srclang` uses a language code to specify the type of data used (see [Language Specification](#language-specification)), while `label` is meant to help the user choose the correct subtitles.
 
 Include the `controls` attribute to allow access to volume controls, video pause and playback, existing subtitles and transcripts, and more.
 
 ```html
+<!-- HTML file -->
 <video controls width = "500">
   <source src = "/resources/video.mp4" type = "video/mp4">
   <track src = "/resources/english.vtt" kind = "subtitles" srclang = "en" label = "English">
@@ -225,42 +236,42 @@ Include the `controls` attribute to allow access to volume controls, video pause
 
 Disable autoplay for embedded videos. Autoplay can be disorienting for users, as well as annoying (have you ever tried to find that one tab that randomly starts playing music? Yeah).
 
-Actually, the `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay = false` will not work.
+The `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay = false` will not work.
+
+Similarly, allow users to pause and navigate slideshows - it can be distracting to see a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide. 
+
+Since slideshows are usually made using JavaScript, we won't cover how to do it here.
 
 ## Animations
 
 Many people are prone to seizures and can be harmed by websites with too much animation. This means limiting the number of GIFs, and avoiding flashing elements at all costs (the w3 standard is three flashes or less per second).
 
-### Slideshows
-Allow users to pause and navigate slideshows--it can be distracting to have a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide. Since slideshows are usually made using JavaScript, we won't cover how to do it here.
-
 ## Content Reading Level 
 
 Although web developers often aren't responsible for writing site content, 1) they can be and 2) they are often asked for feedback on content.
 
-English language learners, people with reading or language disabilities, and more are affected by unclear or complicated language. The standard for general-audience websites is to use language at an 8th-grade reading level. Avoid the passive voice and avoid convoluted sentence structure. Think about what words or phrases can be replaced with simpler ones. 
+English language learners, people with reading or language disabilities, and others are affected by unclear or complicated language. The standard for general-audience websites is to use language at an 8th-grade reading level. Avoid the passive voice and avoid convoluted sentence structure. Think about what words or phrases can be replaced with simpler ones. 
 
 Correct spelling and grammar help make sure that everyone is on the same page and facilitates easy reading.
 
 ## Conclusion
 
-It might seem like there are suddenly a million things to worry about that you didn't think about before. That's okay: don't sweat it if you can't remember everything. What's important is that you start looking at websites you use and websites you create with a critical eye, asking: "How does this meet accessibility guidelines?", "How might this website be hard for some people to use?", and "What can I do to make my website functional and enjoyable for everyone?" Once you've identified a problem, you can always Google the solution to jog your memory.
+It might seem that there are suddenly a million things to worry about that you didn't think about before. Don't sweat it if you can't remember everything. What's important is to start looking at websites you use and the websites you create with a critical eye, asking: "How does this meet accessibility guidelines?", "How might this website be hard for some people to use?", and "What can I do to make my website functional and enjoyable for everyone?" Once you've identified a problem, you can always Google the solution to jog your memory.
 
-Here are the topics we've covered:
+As a review, here are the topics we've covered:
 * Fonts and font sizes
-* Allowing zooming in
+* Accommodating zooming in
 * Color contrast
-* Alt text and video transcripts
-* Disabling video autoplay
+* `alt` and `track`
+* Disabling `autoplay`
 * Limiting animation and flashing effects
-* Slideshow navigation
 * Semantic HTML
-* Tabindex and labeling links
+* Tabindex and labeling links and buttons
 * Content reading level
 
-Accessibility should not be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. Keep learning and improving user experience for all audiences on all websites :) 
+One final note: accessibility should not be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. Keep learning and improving user experience for all audiences on all websites :) 
 
-For more practice, check out our [portfolio task]()!
+Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible! 
 
 ## Accessibility Checkers
 
