@@ -176,6 +176,8 @@ This also means that button and link text should be descriptive. Avoid "click he
 </button>
 ```
 
+![]()
+
 ### Language Specification
 
 Screen readers are preprogrammed voices that read page content for users. They don't automatically know what language a website is written in (by language I mean human language, not programming language), which can result in some awkward pronunciation for foreign-language content. Specify the main language of a page using the appropriate language code:
@@ -192,9 +194,9 @@ Embedded media can be difficult to consume for many populations and for many rea
 
 ### Alt text
 
-Alt text is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
+You've seen alt text before, which is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
 
-Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. If nothing new is added, then `alt = ""` is okay. 
+Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt` attribute altogether.) 
 
 ```html 
 <!-- HTML file -->
