@@ -8,6 +8,11 @@ html {
     color: white;
     font-family: Fredoka One, sans-serif;
     position: fixed;
+    width: 100%;
+}
+
+#nav a {
+    text-align: right;
 }
 
 #footer {
@@ -19,14 +24,15 @@ html {
 body {
     color: white;
     font-family: Chewy, sans-serif;
-    background-image: url(accessibility-resources/background.jpg);
+    background-image: url(../background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
 }
 
 a {
-    color: white !important;
+    color: white;
+    text-decoration: none;
 }
 
 a:hover {
@@ -42,6 +48,7 @@ div {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 80%;
 }
 
 img {
