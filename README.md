@@ -33,7 +33,9 @@ This workshop assumes an intermediate working knowledge of HTML and CSS. However
 
 What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words can be wrong or partially wrong, and in order to create the best experience on our websites, we should be comfortable with constantly adapting to the highest standards for accessibility. (This tends to be a theme across computer programming.) 
 
-For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for many internet users, these features can make or break their experience with your website. These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. Why is it important to pay attention to all these needs, you ask?
+For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for many internet users, these features can make or break their experience with your website. These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
+
+Why is it important to pay attention to all these needs, you ask?
 
 1. Help people with all kinds of needs use and enjoy your website
 1. Increase traffic and user satisfaction
@@ -88,7 +90,9 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like the curve on the ends of the Ts in this document.) Sans serif fonts like Arial are also popular because they look sleek and modern. A good rule of thumb is to copy a paragraph of an article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
+On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. 
+
+Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like the curve on the ends of the Ts in this document.) Sans serif fonts like Arial are also popular because they look sleek and modern. A good rule of thumb is to copy a paragraph of an article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
 
 ### Zooming In
 
@@ -196,7 +200,9 @@ Embedded media can be difficult to consume for many populations and for many rea
 
 You've seen alt text before, which is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
 
-Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt` attribute altogether.) 
+Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but a graph of average daily cups of coffee drunk by university students probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. 
+
+If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt` attribute altogether.) 
 
 ```html 
 <!-- HTML file -->
