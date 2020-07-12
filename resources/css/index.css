@@ -3,14 +3,19 @@ html {
     width: 100%;
 }
 
-#header, #footer {
-    background-color: #55ae33;
+#nav, #footer {
+    background-color: #B0FF72;
     color: white;
+    font-family: Fredoka One, sans-serif;
+
 }
 
 body {
     color: white;
-    background-color: #62ee1e;
+    font-family: Roboto, sans-serif;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 a {
@@ -18,5 +23,14 @@ a {
 }
 
 a:hover {
-    color: blue;
+    color: B0FF72;
+}
+
+.button {
+    background-color: #FF2EF7;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
 }
