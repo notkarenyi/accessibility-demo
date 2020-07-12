@@ -200,7 +200,7 @@ Always, always, always provide alt text for images that have semantic meaning. F
 
 ```html 
 <!-- HTML file -->
- <img href = "/images/graph.jpg" alt = "Average daily cups of coffee drunk by university students. Source: College University, 2008.">
+ <img href = "/images/graph.jpg" alt = "Average daily cups of coffee drunk by university students. Source: College University, 2008." />
 ```
 
 ![image]()
@@ -228,9 +228,9 @@ Include the `controls` attribute to allow access to volume controls, video pause
 ```html
 <!-- HTML file -->
 <video controls width = "500">
-  <source src = "/resources/video.mp4" type = "video/mp4">
-  <track src = "/resources/english.vtt" kind = "subtitles" srclang = "en" label = "English">
-  <track src = "/resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish">
+  <source src = "/resources/video.mp4" type = "video/mp4" />
+  <track src = "/resources/english.vtt" kind = "subtitles" srclang = "en" label = "English" />
+  <track src = "/resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish" />
 </video>
 ```
 
