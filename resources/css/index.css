@@ -1,0 +1,22 @@
+html {
+    font-size: 100%;
+    width: 100%;
+}
+
+#header, #footer {
+    background-color: #55ae33;
+    color: white;
+}
+
+body {
+    color: white;
+    background-color: #62ee1e;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+}
