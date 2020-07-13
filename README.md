@@ -158,7 +158,7 @@ Always use a color-contrast checker to ensure that your text and visual elements
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
-![Some text placed over an image, which is very difficult to read.](resources/image-text.PNG)
+![Some text placed over an image, which is very difficult to read.](resources/image-text.png)
 
 ## Supporting Screen Readers
 
@@ -245,10 +245,10 @@ If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt`
 
 ```html 
 <!-- HTML file -->
- <img href = "/images/acm-logo.png" alt = "ACM logo" />
+ <img href = "images/acm-logo.png" alt = "ACM logo" />
 ```
 
-![ACM logo](/images/acm-logo.PNG)
+![ACM logo](resources/acm-logo.PNG)
 
 Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
@@ -273,9 +273,9 @@ Include the `controls` attribute to allow access to volume controls, video pause
 ```html
 <!-- HTML file -->
 <video controls width = "500">
-  <source src = "/resources/video.mp4" type = "video/mp4" />
-  <track src = "/resources/english.vtt" kind = "subtitles" srclang = "en" label = "English" />
-  <track src = "/resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish" />
+  <source src = "resources/video.mp4" type = "video/mp4" />
+  <track src = "resources/english.vtt" kind = "subtitles" srclang = "en" label = "English" />
+  <track src = "resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish" />
 </video>
 ```
 
