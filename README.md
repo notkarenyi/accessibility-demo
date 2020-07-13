@@ -86,7 +86,7 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-![Output of above code: a relatively smaller font, even at 16px](resources/calibri.png)
+![Output of above code: a relatively smaller font, even at 16px](resources/calibri.PNG)
 
 ```css
 /* CSS file */
@@ -96,7 +96,7 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-![Output of above code: a relatively larger font, even at 16px](resources/lucida.png)
+![Output of above code: a relatively larger font, even at 16px](resources/lucida.PNG)
 
 On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. 
 
@@ -115,7 +115,7 @@ p {
 }
 ```
 
-![Output of above code: text that cuts off at the edge.](resources/nowrap.png)
+![Output of above code: text that cuts off at the edge.](resources/nowrap.PNG)
 
 ```css
 /* CSS file */
@@ -124,7 +124,7 @@ p {
 }
 ```
 
-![Output of above code: text that does not cut off at the edge.](resources/normal.png)
+![Output of above code: text that does not cut off at the edge.](resources/normal.PNG)
 
 ### Color Contrast 
 
@@ -154,11 +154,11 @@ Always use a color-contrast checker to ensure that your text and visual elements
 }
 ```
 
-![Output of above code: the first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](/resources/color-contrast.png)
+![Output of above code: the first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](resources/color-contrast.PNG)
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
-![Some text placed over an image, which is very difficult to read.](/resources/image-text.png)
+![Some text placed over an image, which is very difficult to read.](resources/image-text.png)
 
 ## Supporting Screen Readers
 
@@ -187,8 +187,9 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice
   <a href= "/about">About</a>
 </nav>
 ```
-![Output of above code: two links labeled Home and About](/resources/semantic-html.png)
-![Output of above code: two links labeled Home and About](/resources/semantic-html.png)
+![Output of above code: two links labeled Home and About](resources/semantic-html.PNG)
+
+![Output of above code: two links labeled Home and About](resources/semantic-html.PNG)
 
 Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
@@ -209,7 +210,7 @@ This also means that button and link text should be descriptive. Avoid "click he
 </button>
 ```
 
-![Output of code above: a noninformative button that says Click here!](resources/click-button.png)
+![Output of code above: a noninformative button that says Click here!](resources/click-button.PNG)
 
 ```html
 <!-- HTML file -->
@@ -219,7 +220,7 @@ This also means that button and link text should be descriptive. Avoid "click he
 </button>
 ```
 
-![Output of code above: an informative button that says Log in](resources/login-button.png)
+![Output of code above: an informative button that says Log in](resources/login-button.PNG)
 
 ### Language Specification
 
@@ -245,10 +246,10 @@ If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt`
 
 ```html 
 <!-- HTML file -->
- <img href = "/images/acm-logo.png" alt = "ACM logo" />
+ <img href = "images/acm-logo.png" alt = "ACM logo" />
 ```
 
-![ACM logo](/images/acm-logo.png)
+![ACM logo](resources/acm-logo.png)
 
 Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
@@ -273,9 +274,9 @@ Include the `controls` attribute to allow access to volume controls, video pause
 ```html
 <!-- HTML file -->
 <video controls width = "500">
-  <source src = "/resources/video.mp4" type = "video/mp4" />
-  <track src = "/resources/english.vtt" kind = "subtitles" srclang = "en" label = "English" />
-  <track src = "/resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish" />
+  <source src = "resources/video.mp4" type = "video/mp4" />
+  <track src = "resources/english.vtt" kind = "subtitles" srclang = "en" label = "English" />
+  <track src = "resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish" />
 </video>
 ```
 
