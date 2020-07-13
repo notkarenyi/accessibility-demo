@@ -86,7 +86,7 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-![Output of above code: a relatively smaller font, even at 16px](resources/calibri.png)
+![Output of above code: a relatively smaller font, even at 16px](resources/calibri.PNG)
 
 ```css
 /* CSS file */
@@ -96,7 +96,7 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-![Output of above code: a relatively larger font, even at 16px](resources/lucida.png)
+![Output of above code: a relatively larger font, even at 16px](/resources/lucida.png)
 
 On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. 
 
