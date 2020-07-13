@@ -188,6 +188,7 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice
 </nav>
 ```
 ![Output of above code: two links labeled Home and About](resources/semantic-html.PNG)
+
 ![Output of above code: two links labeled Home and About](resources/semantic-html.PNG)
 
 Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
@@ -248,7 +249,7 @@ If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt`
  <img href = "images/acm-logo.png" alt = "ACM logo" />
 ```
 
-![ACM logo](resources/acm-logo.PNG)
+![ACM logo](resources/acm-logo.png)
 
 Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
