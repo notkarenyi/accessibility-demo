@@ -321,6 +321,8 @@ One final note: accessibility should not be an afterthought. You'll make it easi
 
 Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible for all users! 
 
+Or, check out this [website](https://electricdinosaurs.github.io/accessibility-demo/) I made that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
+
 ## Accessibility Checkers
 
 Never rely on a machine to "check off" accessibility requirements. (See [this blog post](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/) for an example of how machines can make mistakes sometimes.) But I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
