@@ -19,7 +19,7 @@ div {
     margin: 50px 0;
 }
 
-img, video, iframe {
+img, video {
     max-width: 100%;
 }
 
