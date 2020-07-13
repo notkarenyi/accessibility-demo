@@ -197,7 +197,7 @@ Notice that there's no visual difference between using many of these tags as opp
 
 Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. Because of this feature, always organize links and button in a meaningful order.
 
-This also means that button and link text should be descriptive. Avoid "click here" and other phrases without context, since they can be confusing to people who are only reading the links on a site.
+This also means that button and link text should be descriptive. Avoid "click here" and other phrases without context, since they can be confusing to people who are only reading the links on a site. Try reading all links on your website by themselves to check if they make sense in isolation.
 
 ```html
 <!-- HTML file -->
@@ -321,11 +321,11 @@ One final note: accessibility should not be an afterthought. You'll make it easi
 
 Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible for all users! 
 
-Or, check out this [website](https://electricdinosaurs.github.io/accessibility-demo/) I made that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
+Or, check out this [horrible example website](https://electricdinosaurs.github.io/accessibility-demo/) I made that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
 
 ## Accessibility Checkers
 
-Never rely on a machine to "check off" accessibility requirements. (See [this blog post](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/) for an example of how machines can make mistakes sometimes.) But I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
+Never rely on a machine to "check off" accessibility requirements. (Here is a blog post that shows [how machines can make mistakes sometimes](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/).) Still, I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
 
 * [WAVE browser extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
 * [w3 evaluation tools](https://www.w3.org/WAI/ER/tools/)
