@@ -2,9 +2,9 @@
 
 ## Overview
 
-Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your familiarity with accessibility guidelines, in conjunction with some convenient tools, to evaluate websites on whether those needs are being fulfilled.
+Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your familiarity with accessibility guidelines, with the help of convenient tools, to evaluate websites.
 
-This workshop assumes an intermediate working knowledge of HTML and CSS. However, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you aren't familiar with some of this code yet - most of what is mentioned here has been introduced by Leo and Matt already, but these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
+This workshop assumes an intermediate working knowledge of HTML and CSS. Unlike previous lessons, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you haven't seen some of this code from Matt and Leo yet - these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
 
 ## Table of Contents
 
@@ -31,17 +31,17 @@ This workshop assumes an intermediate working knowledge of HTML and CSS. However
 
 ## What Does Accessibility Involve?
 
-What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words can be wrong or partially wrong, and in order to create the best experience on our websites, we should be comfortable with constantly adapting to the highest standards for accessibility. (This tends to be a theme across computer programming.) 
+What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words don't always tell the whole story. To create the best user experience, we should be comfortable with constantly adapting to the most recent accessibility standards. (This tends to be a theme across computer programming.) 
 
-For most web developers and many users, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for many internet users, these features can make or break their experience with your website. These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
+For many, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for an equally important population, these features can make or break their experience with your website. These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
 
-Why is it important to pay attention to all these needs, you ask?
+Why is this so important, you ask?
 
-1. Help people with all kinds of needs use and enjoy your website
+1. Make websites functional and enjoyable for users with different needs
 1. Increase traffic and user satisfaction
 1. Everyone benefits from accessible websites
 
-Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) love the design part of web development, but sometimes we get too caught up in what looks "cool" and not what is actually legible or usable. Good web design, like any kind of design, is a balance of both aesthetic and function.
+Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) can get too caught up in what looks "cool" and not what is actually legible or usable. Good web design, like any kind of design, is a balance of both aesthetic and function.
 
 <!--
 ### Josie Bruin's Story
@@ -86,7 +86,7 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-![Output of above code: a relatively smaller font, even at 16px](resources/calibri.PNG)
+![A relatively smaller font, even at 16px](resources/calibri.PNG)
 
 ```css
 /* CSS file */
@@ -96,11 +96,13 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
   }
 ```
 
-![Output of above code: a relatively larger font, even at 16px](resources/lucida.PNG)
+![A relatively larger font, even at 16px](resources/lucida.PNG)
 
 On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. 
 
-Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like the curve on the ends of the Ts in this document.) Sans serif fonts like Arial are also popular because they look sleek and modern. A good rule of thumb is to copy a paragraph of an article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
+Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like on the ends of the Ts in the Lucida example above.) Sans serif fonts like Arial are also popular because they look sleek and modern. 
+
+A good rule of thumb is to copy a paragraph of a random article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
 
 ### Zooming In
 
@@ -115,7 +117,7 @@ p {
 }
 ```
 
-![Output of above code: text that cuts off at the edge.](resources/nowrap.PNG)
+![Text that cuts off at the edge.](resources/nowrap.PNG)
 
 ```css
 /* CSS file */
@@ -124,13 +126,11 @@ p {
 }
 ```
 
-![Output of above code: text that does not cut off at the edge.](resources/normal.PNG)
+![Text that does not cut off at the edge.](resources/normal.PNG)
 
 ### Color Contrast 
 
-Color blindness affects 1 in 12 men and 1 in 200 women worldwide. Use a color-blindness checker to simulate how your website would look to someone with color blindness. 
-
-Always use a color-contrast checker to ensure that your text and visual elements meet a good contrast ratio, in order to help people read and see content clearly. Here's one of the most common examples of bad color contrast that I see around the web:
+Color blindness affects 1 in 12 men and 1 in 200 women worldwide. Always use a color-contrast checker to ensure that your text and visual elements meet a good contrast ratio, in order to allow people with visual impairments and/or color blindness to clearly view content. Here's an example of bad color contrast that I often see around the web:
 
 ```css
 /* CSS file */
@@ -154,7 +154,7 @@ Always use a color-contrast checker to ensure that your text and visual elements
 }
 ```
 
-![Output of above code: the first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](resources/color-contrast.PNG)
+![The first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](resources/color-contrast.PNG)
 
 Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
 
@@ -174,8 +174,8 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice
 <!-- HTML file -->
 <!-- bad -->
 <div class = "nav">
- <a href= "/home">Home</a>
- <a href= "/about">About</a>
+ <a href="/home">Home</a>
+ <a href="/about">About</a>
 </div>
 ```
 
@@ -183,13 +183,13 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice
 <!-- HTML file -->
 <!-- good -->
 <nav>
-  <a href= "/home">Home</a>
-  <a href= "/about">About</a>
+  <a href="/home">Home</a>
+  <a href="/about">About</a>
 </nav>
 ```
-![Output of above code: two links labeled Home and About](resources/semantic-html.PNG)
+![Two links labeled Home and About](resources/semantic-html.PNG)
 
-![Output of above code: two links labeled Home and About](resources/semantic-html.PNG)
+![Two links labeled Home and About](resources/semantic-html.PNG)
 
 Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
@@ -224,11 +224,11 @@ This also means that button and link text should be descriptive. Avoid "click he
 
 ### Language Specification
 
-Screen readers are preprogrammed voices that read page content for users. They don't automatically know what language a website is written in (by language I mean human language, not programming language), which can result in some awkward pronunciation for foreign-language content. Specify the main language of a page using the appropriate language code:
+Screen readers are preprogrammed voices that read page content for users. They don't automatically know what language a website is written in (by language I mean human language, not programming language), which can result in bad pronunciation. Specify each page's main language using the appropriate language code:
 
 ```html
 <!-- HTML file -->
-<html lang = "en">
+<html lang="en">
   <!-- Your website goes here -->
 </html>
 ```
@@ -240,30 +240,30 @@ Embedded media can be difficult to consume for many populations and for many rea
 
 You've seen alt text before, which is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
 
-Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. A good rule of thumb is if the image adds context to the page that isn't already present in text, then alt text is needed. 
+Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. 
 
-If nothing new is added, then `alt = ""` is okay. (You should not omit the `alt` attribute altogether.) 
+A good rule of thumb is if the image adds context to the page that isn't already present in surrounding text, then alt text is needed. If nothing new is added, then `alt=""` is okay. (You should not omit the `alt` attribute altogether.) 
 
 ```html 
 <!-- HTML file -->
- <img href = "images/acm-logo.png" alt = "ACM logo" />
+ <img href="images/acm-logo.png" alt="ACM logo" />
 ```
 
 ![ACM logo](resources/acm-logo.png)
 
-Writing good alt text takes a little thought. The same image might have different alt text in different contexts. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
+Writing good alt text takes a little thought. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
 Be accurate when describing its content--don't provide information that is not present in the media. 
 
 Write alt text for icons in the same way you would for images, since some icons (such as file-type icons) add context, while decorative icons do not.
 
-The only instance in which alt text can be redundant with surrounding text is when an image functions as a link. In that case, the alt text must be present to act as a link, so an empty `alt` attribute is not allowed. Again, do not write "Link to..." as it is clear that the image is a link.
+The only situation where alt text can be redundant with surrounding text is when an image functions as a link. In that case, alt text must be present to act as a link, so `alt=""` is not allowed. Again, do not write "Link to..." as it is clear that the image is a link.
 
 Videos do not support `alt` attributes. Use `title` instead or provide an external link to the video. 
 
 ### Transcripts 
 
-People with hearing impairments and English language learners often have difficulty following audio or video elements. Others also find transcripts and subtitles useful in noisy environments or when skipping through a media element to find a specific part. 
+English language learners and people with hearing impairments often have difficulty following audio or video elements. Transcripts and subtitles are also useful in noisy environments or when skipping through media to find specific information. 
 
 WebVTT files are the standard for synchronized closed captions. Include these with the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. 
 
@@ -300,7 +300,7 @@ Although web developers often aren't responsible for writing site content, 1) th
 
 English language learners, people with reading or language disabilities, and others are affected by unclear or complicated language. The standard for general-audience websites is to use language at an 8th-grade reading level. Avoid the passive voice and avoid convoluted sentence structure. Think about what words or phrases can be replaced with simpler ones. 
 
-Correct spelling and grammar help make sure that everyone is on the same page and facilitates easy reading.
+Use correct spelling and grammar for more efficient communication.
 
 ## Conclusion
 
@@ -317,9 +317,9 @@ As a review, here are the topics we've covered:
 * Tabindex and labeling links and buttons
 * Content reading level
 
-One final note: accessibility should not be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. Keep learning and improving user experience for all audiences on all websites :) 
+One final note: accessibility should not be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. 
 
-Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible! 
+Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible for all users! 
 
 ## Accessibility Checkers
 
