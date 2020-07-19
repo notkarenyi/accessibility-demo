@@ -14,7 +14,7 @@ This workshop assumes an intermediate working knowledge of HTML and CSS. Unlike 
   * [Fonts and Font Sizes](#fonts-and-font-sizes)
   * [Zooming In](#zooming-in)
   * [Color Contrast](#color-contrast)
-* [Supporting Screen Readers](#supporting-screen-readers)
+* [Supporting Screenreaders](#supporting-screenreaders)
   * [Semantic HTML](#semantic-html)
   * [Tabindex](#tabindex)
   * [Language Specification](#language-specification)
@@ -98,9 +98,9 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
 
 ![A relatively larger font, even at 16px](resources/lucida.PNG)
 
-On the same note, do not use display (aka fancy) fonts in body text. This is painful for everyone. 
-
 Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like on the ends of the Ts in the Lucida example above.) Sans serif fonts like Arial are also popular because they look sleek and modern. 
+
+We stick to basic serif and sans serif fonts because using display (aka fancy) fonts in body text slows down the brain's processing of text.  
 
 A good rule of thumb is to copy a paragraph of a random article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
 
@@ -130,45 +130,47 @@ p {
 
 ### Color Contrast 
 
-Color blindness affects 1 in 12 men and 1 in 200 women worldwide. Always use a color-contrast checker to ensure that your text and visual elements meet a good contrast ratio, in order to allow people with visual impairments and/or color blindness to clearly view content. Here's an example of bad color contrast that I often see around the web:
+Color blindness affects 1 in 12 men and 1 in 200 women worldwide. As a result, some people have difficulty comfortably reading text against a background without a sufficient level of color contrast. 
 
-```css
-/* CSS file */
-.bad {
-  color: #ffffff;
-  background-color: #fee851;
-  width: 100px;
-  padding: 10px;
-}
-.also-bad {
-  color: #3f82fd;
-  background-color: #fee851;
-  width: 100px;
-  padding: 10px;
-}
-.good {
-  color: #000000;
-  background-color: #fee851;
-  width: 100px;
-  padding: 10px;
-}
-```
+What does color contrast mean, exactly?
 
-![The first box is white text on yellow, the second is blue text on yellow, and the third is black text on yellow.](resources/color-contrast.PNG)
+If you have ever taken art class, contrast was described as a strong difference between two colors. 
 
-Be very careful when placing text over images. In fact, avoid placing text over images when the text is essential to understanding or using the website.
+Technically, there are three types of contrast: hue, luminance, and saturation. What we're mainly addressing here is luminance contrast, since high hue contrast without high luminance contrast is usually awful. The difference between the three is illustrated below in an Adobe Photoshop properties panel.
+
+![Photoshop properties panel: Hue (a range covering ROYGBIV), luminance (brightness), and saturation ("colorfulness")](resources/hsl.PNG)
+
+For example, take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
+
+Now, imagine if you sucked all the color out the red and the green. The desaturated example shows why we found the green-on-red so ugly: it's because the two colors are too similar in luminance! This is what makes noncontrasting colors hard to read.
+
+![Red text on green background. Second panel shows the same image, but desaturated, which is difficult to read for everyone.](resources/contrast-calculation.PNG)
+
+In the real world, bad color contrast can be hard to spot. I've often seen people trying to place white text over a yellow background, which does not pass contrast ratio standards. 
+
+Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
+
+![The WebAIM color contrast checker](resources/color-contrast.PNG)
+
+Sometimes, we will be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
 
 ![Some text placed over an image, which is very difficult to read.](resources/image-text.png)
 
-## Supporting Screen Readers
+## Supporting Screenreaders
 
-This is probably the most important topic covered in this workshop - consideration of screen readers is almost impossible to spot visually. The following are invisible to the average user, but can make or break the site experience for someone using a screen reader.
+This is probably the most important topic covered in this workshop - consideration of screen readers is almost impossible to spot visually. The following are often invisible to the average user, but can make or break the site experience for someone using a screen reader.
 
 ### Semantic HTML
 
-HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screen readers rely on these tags to  navigate websites. 
+HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screenreaders rely on these tags to  navigate websites. In fact, *screenreaders ignore CSS and JS*.
 
-Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight - that's what CSS is for! Only use heading tags as organizational tools for your website, such as making the page title an `h1`, and making subtitles `h2`.
+This makes sense - CSS and JS are 99% visual anyway, and irrelevant to people with visual impairments. So, we have to consider what our sites would look like without the pretty packaging.
+
+Screenreader users can use headings on a page as a sort of table of contents. After each section and before each heading, screenreaders will pause to allow time to digest information. If the correct tags aren't used, screen readers will read out the whole page in one go, allowing less adjustment to the user's needs.
+
+Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight - that's what CSS is for! Think of heading tags as organizational tools for your website. Only the page title should be an `h1`. Subsections may be `h2`, `h3`, and so forth. 
+
+On the same note, avoid using `br` for spacing purposes between paragraphs. Use them meaningfully, like in poems or addresses.
 
 ```html
 <!-- HTML file -->
@@ -193,11 +195,20 @@ Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice
 
 Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
 
+Also, note that using semantic HTML has a positive side effect: it can make your HTML and CSS faster to write and easier to read, since you have predetermined tags instead of having to specify classes and IDs for each new element.
+
+"But I don't want to have to go back and change *every single* div in my code!" It helps to physically plan out sites on a piece of paper before you start making it, so you know what kinds of tags you'll need beforehand.
+
 ### Tabindex
 
-Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. Because of this feature, always organize links and button in a meaningful order.
+Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
 
-This also means that button and link text should be descriptive. Avoid "click here" and other phrases without context, since they can be confusing to people who are only reading the links on a site. Try reading all links on your website by themselves to check if they make sense in isolation.
+Try it out yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where the links and buttons lead?
+
+Thus, "click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like https://github.com/username/project/master/README.md. That would be awful! 
+
+Instead, we should label links and buttons in an informative way. For the above example, a better link would be "[visit my project](https://github.com/electricdinosaurs/accessibility-demo/edit/master/README.md)". Descriptive labels allow the user to know what to expect when they visit a link.
+
 
 ```html
 <!-- HTML file -->
@@ -210,7 +221,7 @@ This also means that button and link text should be descriptive. Avoid "click he
 </button>
 ```
 
-![Output of code above: a noninformative button that says Click here!](resources/click-button.PNG)
+![A noninformative button that says Click here!](resources/click-button.PNG)
 
 ```html
 <!-- HTML file -->
@@ -220,7 +231,9 @@ This also means that button and link text should be descriptive. Avoid "click he
 </button>
 ```
 
-![Output of code above: an informative button that says Log in](resources/login-button.PNG)
+![An informative button that says Log in](resources/login-button.PNG)
+
+Additionally, we should organize links and buttons in a meaningful order. This is relatively context-dependent, but as an example, "Create Account" and "Log In" are usually adjacent to each other by convention. It wouldn't make sense to have these links separated by three or four other links on the page.
 
 ### Language Specification
 
@@ -240,7 +253,7 @@ Embedded media can be difficult to consume for many populations and for many rea
 
 You've seen alt text before, which is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
 
-Always, always, always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. 
+Always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. 
 
 A good rule of thumb is if the image adds context to the page that isn't already present in surrounding text, then alt text is needed. If nothing new is added, then `alt=""` is okay. (You should not omit the `alt` attribute altogether.) 
 
@@ -253,11 +266,11 @@ A good rule of thumb is if the image adds context to the page that isn't already
 
 Writing good alt text takes a little thought. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
-Be accurate when describing its content--don't provide information that is not present in the media. 
+Be accurate when describing its content - we shouldn't provide information that is not present in the media. 
 
-Write alt text for icons in the same way you would for images, since some icons (such as file-type icons) add context, while decorative icons do not.
+Alt text for icons follows the same conventions as for images, since some icons (such as file-type icons) add context.
 
-The only situation where alt text can be redundant with surrounding text is when an image functions as a link. In that case, alt text must be present to act as a link, so `alt=""` is not allowed. Again, do not write "Link to..." as it is clear that the image is a link.
+The only situation where alt text can be redundant with surrounding text is when an image functions as a link. In that case, alt text must be present to act as a link, so `alt=""` is not allowed. Again, "Link to..." is not necessary as it is clear that the image is a link.
 
 Videos do not support `alt` attributes. Use `title` instead or provide an external link to the video. 
 
@@ -265,7 +278,7 @@ Videos do not support `alt` attributes. Use `title` instead or provide an extern
 
 English language learners and people with hearing impairments often have difficulty following audio or video elements. Transcripts and subtitles are also useful in noisy environments or when skipping through media to find specific information. 
 
-WebVTT files are the standard for synchronized closed captions. Include these with the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. 
+WebVTT files are the standard for closed captions. Include these with the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. 
 
 `srclang` uses a language code to specify the type of data used (see [Language Specification](#language-specification)), while `label` is meant to help the user choose the correct subtitles.
 
@@ -282,7 +295,7 @@ Include the `controls` attribute to allow access to volume controls, video pause
 
 ### Autoplay
 
-Disable autoplay for embedded videos. Autoplay can be disorienting for users, as well as annoying (have you ever tried to find that one tab that randomly starts playing music? Yeah).
+Autoplay can be disorienting for users, as well as annoying (have you ever tried to find that one tab that randomly starts playing music? Yeah).
 
 The `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay = false` will not work.
 
@@ -321,11 +334,11 @@ One final note: accessibility should not be an afterthought. You'll make it easi
 
 Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible for all users! 
 
-Or, check out this [horrible example website](https://electricdinosaurs.github.io/accessibility-demo/) I made that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
+Or, check out this [anti-accessibility example website](https://electricdinosaurs.github.io/accessibility-demo/) I made that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
 
 ## Accessibility Checkers
 
-Never rely on a machine to "check off" accessibility requirements. (Here is a blog post that shows [how machines can make mistakes sometimes](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/).) Still, I highly recommend saving these resources for later--I use them all the time and they are great aids for checking how your website measures up. 
+Never rely on a machine to "check off" accessibility requirements. (Here is a blog post that shows [how machines can make mistakes sometimes](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/).) Still, I highly recommend saving these resources for later - I use them all the time and they are great aids for checking how your website measures up. 
 
 * [WAVE browser extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
 * [w3 evaluation tools](https://www.w3.org/WAI/ER/tools/)
@@ -340,18 +353,30 @@ Want to learn about AA versus AAA standards, input errors, and more? Check out t
 
 * [Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
 * [Yale guidelines](https://usability.yale.edu/web-accessibility/articles)
+* [HTML Accessibility (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
 * [w3 guidelines](https://www.w3.org/TR/WCAG21)
 
 ## Reference Links
 
 These articles will save you some googling on the topics we've covered today. (Mozilla Developer Network has been abbreviated as MDN.)
 
+Section: Appearance
+* [Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
+* [Basic color theory](http://www.colorsontheweb.com/Color-Theory/Color-Contrast)
+
+Section: Supporting Screenreaders
 * [Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+* [More semantic HTML](https://www.jungledisk.com/blog/2017/12/04/should-i-bother-with-semantic-html/)
 * [Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
 * [Tabindex (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 * [Hyperlink accessibility & tab index (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
-* [Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
+* [Alt text (WebAIM)](https://webaim.org/techniques/alttext/)
+* [Download and test out the NVDA screenreader](https://www.nvaccess.org/download/)
+
+Section: Images and Videos
 * [Video attributes (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
 * [WebVTT files (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
 * [Track tag for subtitles (w3)](https://www.w3schools.com/tags/tag_track.asp)
-* [Alt text (WebAIM)](https://webaim.org/techniques/alttext/)
+
+Bonus (not covered today)
+* [External links](https://codersblock.com/blog/external-links-new-tabs-and-accessibility/)
