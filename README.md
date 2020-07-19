@@ -4,7 +4,7 @@
 
 Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your familiarity with accessibility guidelines, with the help of convenient tools, to evaluate websites.
 
-This workshop assumes an intermediate working knowledge of HTML and CSS. Unlike previous lessons, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you haven't seen some of this code from Matt and Leo yet - these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
+This workshop assumes an intermediate working knowledge of HTML and CSS. Unlike previous lessons, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you haven't seen some of this code from Matt and Leo yet&mdash;these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
 
 ## Table of Contents
 
@@ -31,9 +31,13 @@ This workshop assumes an intermediate working knowledge of HTML and CSS. Unlike 
 
 ## What Does Accessibility Involve?
 
-What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words don't always tell the whole story. To create the best user experience, we should be comfortable with constantly adapting to the most recent accessibility standards. (This tends to be a theme across computer programming.) 
+What comes to mind when you think of the word "disabled" or the word "accessible"? Our assumptions about these words don't always tell the whole story. 
 
-For many, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for an equally important population, these features can make or break their experience with your website. These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
+To create the best user experience, we should be comfortable with constantly adapting to the most recent accessibility standards. (This tends to be a theme across computer programming.) 
+
+For many, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for an equally important population, these features can make or break their experience with your website. 
+
+These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
 
 Why is this so important, you ask?
 
@@ -41,22 +45,9 @@ Why is this so important, you ask?
 1. Increase traffic and user satisfaction
 1. Everyone benefits from accessible websites
 
-Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) can get too caught up in what looks "cool" and not what is actually legible or usable. Good web design, like any kind of design, is a balance of both aesthetic and function.
+Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) can get too caught up in what looks "cool" and not what is actually legible or usable. 
 
-<!--
-### Josie Bruin's Story
-
-To start thinking about what I mean by "different needs," let's take an example of one hypothetical user's experience. 
-
-Of the two sites below, which is better?
-
-![]()
-![]()
-
-Without knowing how users can interact with the websites, it's hard to say for sure. But let's assume that Josie Bruin, who uses a screen reader because she is legally blind, visits Website A. If Website A uses semantic tags, alt text, and language specification, and Website B does not, then Josie's experience on Website A is going to be much better than her experience on Website B. 
-
-But what do all these terms mean? Good question--we're ready to dive into the foundations of accessibility.
--->
+Good web design, like any kind of design, is a balance of both aesthetic and function.
 
 ## Appearance
 One of the most straightforward places to start is the visual appearance of your website, since most of us are familiar with what's "good" versus what's not so good. 
@@ -134,23 +125,19 @@ Color blindness affects 1 in 12 men and 1 in 200 women worldwide. As a result, s
 
 What does color contrast mean, exactly?
 
-If you have ever taken art class, contrast was described as a strong difference between two colors. 
-
 Technically, there are three types of contrast: hue, luminance, and saturation. What we're mainly addressing here is luminance contrast, since high hue contrast without high luminance contrast is usually awful. The difference between the three is illustrated below in an Adobe Photoshop properties panel.
 
 ![Photoshop properties panel: Hue (a range covering ROYGBIV), luminance (brightness), and saturation ("colorfulness")](resources/hsl.PNG)
 
-For example, take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
+Take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
 
-Now, imagine if you sucked all the color out the red and the green. The desaturated example shows why we found the green-on-red so ugly: it's because the two colors are too similar in luminance! This is what makes noncontrasting colors hard to read.
+Now, imagine if you sucked all the color out of the red and the green. The desaturated example shows why green on red was so ugly: it's because the two colors are too similar in luminance! This is what makes noncontrasting colors hard to read.
 
-![Red text on green background. Second panel shows the same image, but desaturated, which is difficult to read for everyone.](resources/contrast-calculation.PNG)
+![Red text on green background. A desaturated version of the image is even more difficult to read.](resources/contrast-calculation.png)
 
-In the real world, bad color contrast can be hard to spot. I've often seen people trying to place white text over a yellow background, which does not pass contrast ratio standards. 
+In the real world, bad color contrast can be hard to spot. Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
 
-Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
-
-![The WebAIM color contrast checker](resources/color-contrast.PNG)
+![The WebAIM color contrast checker](resources/color-contrast.png)
 
 Sometimes, we will be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
 
@@ -158,19 +145,15 @@ Sometimes, we will be tempted to place text over images. It's very difficult to 
 
 ## Supporting Screenreaders
 
-This is probably the most important topic covered in this workshop - consideration of screen readers is almost impossible to spot visually. The following are often invisible to the average user, but can make or break the site experience for someone using a screen reader.
+This is probably the most important topic that we'll cover today&mdash;consideration of screen readers is almost impossible to spot visually. The following are often invisible to the average user, but can make or break the site experience for someone using a screen reader.
 
 ### Semantic HTML
 
 HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screenreaders rely on these tags to  navigate websites. In fact, *screenreaders ignore CSS and JS*.
 
-This makes sense - CSS and JS are 99% visual anyway, and irrelevant to people with visual impairments. So, we have to consider what our sites would look like without the pretty packaging.
+This makes sense: CSS and JS are 99% visual anyway, and irrelevant to people with visual impairments. So, we have to consider what our sites would look like without the pretty packaging.
 
-Screenreader users can use headings on a page as a sort of table of contents. After each section and before each heading, screenreaders will pause to allow time to digest information. If the correct tags aren't used, screen readers will read out the whole page in one go, allowing less adjustment to the user's needs.
-
-Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight - that's what CSS is for! Think of heading tags as organizational tools for your website. Only the page title should be an `h1`. Subsections may be `h2`, `h3`, and so forth. 
-
-On the same note, avoid using `br` for spacing purposes between paragraphs. Use them meaningfully, like in poems or addresses.
+How does semantic HTML work? After each section and before each heading, screenreaders pause to allow time to digest information. If the correct tags aren't used, screen readers will read out the whole page in one "breath", so to speak. Also, screenreaders turn headings into a sort of table of contents for previewing and skipping around the page. 
 
 ```html
 <!-- HTML file -->
@@ -193,22 +176,23 @@ On the same note, avoid using `br` for spacing purposes between paragraphs. Use 
 
 ![Two links labeled Home and About](resources/semantic-html.PNG)
 
-Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible. But using the wrong semantic tags has a very real effect on potential users.
+Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible.
 
-Also, note that using semantic HTML has a positive side effect: it can make your HTML and CSS faster to write and easier to read, since you have predetermined tags instead of having to specify classes and IDs for each new element.
+Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight&mdash;that's what CSS is for! Think of heading tags as organizational tools for your website. Only the page title should be an `h1`. Subsections may be `h2`, `h3`, and so forth. 
 
-"But I don't want to have to go back and change *every single* div in my code!" It helps to physically plan out sites on a piece of paper before you start making it, so you know what kinds of tags you'll need beforehand.
+On the same note, avoid using `br` for spacing purposes between paragraphs. Use them meaningfully, like in poems or addresses.
+
+Using semantic HTML also has a positive side effect: it can make your HTML and CSS faster to write and easier to read, since you have predetermined tags instead of having to specify classes and IDs for each new element.
 
 ### Tabindex
 
 Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
 
-Try it out yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where the links and buttons lead?
+Try it yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where the links and buttons lead?
 
-Thus, "click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like https://github.com/username/project/master/README.md. That would be awful! 
+"Click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like https://github.com/username/project/master/README.md. That would be awful! 
 
 Instead, we should label links and buttons in an informative way. For the above example, a better link would be "[visit my project](https://github.com/electricdinosaurs/accessibility-demo/edit/master/README.md)". Descriptive labels allow the user to know what to expect when they visit a link.
-
 
 ```html
 <!-- HTML file -->
@@ -233,7 +217,7 @@ Instead, we should label links and buttons in an informative way. For the above 
 
 ![An informative button that says Log in](resources/login-button.PNG)
 
-Additionally, we should organize links and buttons in a meaningful order. This is relatively context-dependent, but as an example, "Create Account" and "Log In" are usually adjacent to each other by convention. It wouldn't make sense to have these links separated by three or four other links on the page.
+We should organize links and buttons in a meaningful order. This is relatively context-dependent, but as an example, "Create Account" and "Log In" are usually adjacent to each other. It wouldn't make sense to have these links separated by three or four other links on the page.
 
 ### Language Specification
 
@@ -266,7 +250,7 @@ A good rule of thumb is if the image adds context to the page that isn't already
 
 Writing good alt text takes a little thought. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
-Be accurate when describing its content - we shouldn't provide information that is not present in the media. 
+Be accurate when describing image content&mdash;we shouldn't provide information that is not present in the media. 
 
 Alt text for icons follows the same conventions as for images, since some icons (such as file-type icons) add context.
 
@@ -278,7 +262,7 @@ Videos do not support `alt` attributes. Use `title` instead or provide an extern
 
 English language learners and people with hearing impairments often have difficulty following audio or video elements. Transcripts and subtitles are also useful in noisy environments or when skipping through media to find specific information. 
 
-WebVTT files are the standard for closed captions. Include these with the `track` tag. Specify `kind = subtitle` and `label` using the appropriate language. 
+WebVTT files are the standard for closed captions. We can include these with the `track` tag, and specify `kind = subtitle` and `label` using the appropriate language. 
 
 `srclang` uses a language code to specify the type of data used (see [Language Specification](#language-specification)), while `label` is meant to help the user choose the correct subtitles.
 
@@ -299,7 +283,7 @@ Autoplay can be disorienting for users, as well as annoying (have you ever tried
 
 The `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay = false` will not work.
 
-Similarly, allow users to pause and navigate slideshows - it can be distracting to see a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide. 
+Similarly, allow users to pause and navigate slideshows&mdash;it can be distracting to see a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide. 
 
 Since slideshows are usually made using JavaScript, we won't cover how to do it here.
 
@@ -338,7 +322,7 @@ Or, check out this [anti-accessibility example website](https://electricdinosaur
 
 ## Accessibility Checkers
 
-Never rely on a machine to "check off" accessibility requirements. (Here is a blog post that shows [how machines can make mistakes sometimes](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/).) Still, I highly recommend saving these resources for later - I use them all the time and they are great aids for checking how your website measures up. 
+Never rely on a machine to "check off" accessibility requirements. (Here is a blog post that shows [how machines can make mistakes sometimes](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/).) Still, I highly recommend saving these resources for later&mdash;I use them all the time and they are great aids for checking how your website measures up. 
 
 * [WAVE browser extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
 * [w3 evaluation tools](https://www.w3.org/WAI/ER/tools/)
@@ -360,11 +344,11 @@ Want to learn about AA versus AAA standards, input errors, and more? Check out t
 
 These articles will save you some googling on the topics we've covered today. (Mozilla Developer Network has been abbreviated as MDN.)
 
-Section: Appearance
+Appearance
 * [Font size guidelines (Learn UI)](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
 * [Basic color theory](http://www.colorsontheweb.com/Color-Theory/Color-Contrast)
 
-Section: Supporting Screenreaders
+Supporting Screenreaders
 * [Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
 * [More semantic HTML](https://www.jungledisk.com/blog/2017/12/04/should-i-bother-with-semantic-html/)
 * [Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
@@ -373,7 +357,7 @@ Section: Supporting Screenreaders
 * [Alt text (WebAIM)](https://webaim.org/techniques/alttext/)
 * [Download and test out the NVDA screenreader](https://www.nvaccess.org/download/)
 
-Section: Images and Videos
+Images and Videos
 * [Video attributes (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
 * [WebVTT files (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
 * [Track tag for subtitles (w3)](https://www.w3schools.com/tags/tag_track.asp)
