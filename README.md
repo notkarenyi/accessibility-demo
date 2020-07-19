@@ -270,10 +270,10 @@ Include the `controls` attribute to allow access to volume controls, video pause
 
 ```html
 <!-- HTML file -->
-<video controls width = "500">
-  <source src = "resources/video.mp4" type = "video/mp4" />
-  <track src = "resources/english.vtt" kind = "subtitles" srclang = "en" label = "English" />
-  <track src = "resources/spanish.vtt" kind = "subtitles" srclang = "sp" label = "Spanish" />
+<video controls width="500">
+  <source src="resources/video.mp4" type="video/mp4" />
+  <track src="resources/english.vtt" kind="subtitles" srclang="en" label="English" />
+  <track src="resources/spanish.vtt" kind="subtitles" srclang="sp" label="Spanish" />
 </video>
 ```
 
