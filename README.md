@@ -127,7 +127,7 @@ What does color contrast mean, exactly?
 
 Technically, there are three types of contrast: hue, luminance, and saturation. What we're mainly addressing here is luminance contrast, since high hue contrast without high luminance contrast is usually awful. The difference between the three is illustrated below in an Adobe Photoshop properties panel.
 
-![Photoshop properties panel: Hue (a range covering ROYGBIV), luminance (brightness), and saturation ("colorfulness")](resources/hsl.PNG)
+![Photoshop properties panel: Hue (a range covering ROYGBIV), luminance (brightness), and saturation ("colorfulness")](resources/hsl.png)
 
 Take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
 
@@ -137,7 +137,7 @@ Now, imagine if you sucked all the color out of the red and the green. The desat
 
 In the real world, bad color contrast can be hard to spot. Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
 
-![The WebAIM color contrast checker](resources/color-contrast.png)
+![The WebAIM color contrast checker](resources/color-contrast.PNG)
 
 Sometimes, we will be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
 
