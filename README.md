@@ -41,8 +41,8 @@ These users experience a range of needs, including colorblindness, use of a scre
 Why is this so important, you ask?
 
 1. Make websites functional and enjoyable for users with different needs
-1. Increase traffic and user satisfaction
 1. Everyone benefits from accessible websites
+1. Increase traffic and user satisfaction
 
 Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) can get too caught up in what looks "cool" and not what is actually legible or usable. 
 
@@ -258,6 +258,12 @@ Alt text for icons follows the same conventions as for images, since some icons 
 The only situation where alt text can be redundant with surrounding text is when an image functions as a link. In that case, alt text must be present to act as a link, so `alt=""` is not allowed. Again, "Link to..." is not necessary as it is clear that the image is a link.
 
 Videos do not support `alt` attributes. Use `title` instead or provide an external link to the video. 
+
+In summary, when writing alt text, we should ask ourselves:
+
+1. Does this image/icon add context (or does it function as a link)?
+1. Is my alt text as brief as possible?
+1. Does my alt text accurately and fully describe the image? 
 
 ### Transcripts 
 
