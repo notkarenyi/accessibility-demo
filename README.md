@@ -58,11 +58,11 @@ Have you ever visited a website with an uncomfortably small or weirdly large fon
 ```css
 /* CSS file */
 /* 768px is a common breakpoint for smartphones */
-  @media screen and (max-width: 768px) {
+  @media all and (max-width: 768px) {
     font-size: 16px;
   }
 
-  @media screen and (min-width: 769px) {
+  @media all and (min-width: 769px) {
     font-size: 18px;
   }
 ```
