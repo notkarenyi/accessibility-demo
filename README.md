@@ -11,7 +11,7 @@ This workshop assumes an intermediate knowledge of HTML and CSS. Unlike previous
 * [What Does Accessibility Involve?](#what-does-accessibility-involve)
 * [Appearance](#appearance)
   * [Fonts and Font Sizes](#fonts-and-font-sizes)
-  * [Zooming In](#zooming-in)
+  * [Zoom Levels](#zoom-levels)
   * [Color Contrast](#color-contrast)
 * [Supporting Screenreaders](#supporting-screenreaders)
   * [Semantic HTML](#semantic-html)
@@ -46,14 +46,14 @@ Why is this so important, you ask?
 
 Each website element that you design or create will be used by all kinds of different people. So, we need to think about how these parts can meet the needs of our users. Many web developers (like me) can get too caught up in what looks "cool" and not what is actually legible or usable. 
 
-Good web design, like any kind of design, is a balance of both aesthetic and function.
+Good web design, like any kind of design, is a balance of both *aesthetic* and *function*.
 
 ## Appearance
-One of the most straightforward places to start is the visual appearance of your website, since most of us are familiar with what's "good" versus what's not so good. 
+We'll start with the visual appearance of websites, since most of us will already be familiar with the qualities that make a website visually accessible or inaccessible. 
 
 ### Fonts and Font Sizes
 
-Have you ever visited a mobile or desktop website with an uncomfortably small or weirdly large font? Pretty annoying, right? Fortunately, someone was smart enough to come up with standard font sizes for mobile and desktop:
+Have you ever visited a website with an uncomfortably small or weirdly large font? Pretty annoying, right? Fortunately, someone was smart enough to come up with standard font sizes for mobile and desktop:
 
 ```css
 /* CSS file */
@@ -94,7 +94,7 @@ We stick to basic serif and sans serif fonts because using display (aka fancy) f
 
 A good rule of thumb is to copy a paragraph of a random article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
 
-### Zooming In
+### Zoom Levels
 
 Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. 
 
@@ -128,11 +128,11 @@ Technically, there are three types of contrast: hue, luminance, and saturation. 
 
 ![Photoshop properties panel: Hue (a range covering ROYGBIV), luminance (brightness), and saturation ("colorfulness")](resources/hsl.png)
 
-What we're mainly addressing here is luminance contrast, since high hue contrast without high luminance contrast is usually not good. Take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
+What we're mainly addressing here is luminance contrast, since high hue contrast doesn't help if luminance contrast is still low. To illustrate, take the following example of green text on a red background. Even though red and green have very different hues, you can see that the end result is pretty unpleasant. 
 
 ![Red text on green background. A desaturated version of the image is even more difficult to read.](resources/contrast-calculation.png)
 
-What's up with the second image? That's what would happen if you sucked all the color out of the red and the green. This desaturated example shows why green on red was so ugly: it's because the two colors are too similar in luminance! That's what makes noncontrasting colors hard to read.
+What's up with the second image? That's what would happen if you sucked all the color out of the red and the green. This desaturated example shows why the first image was so ugly: it's because the two colors are too similar in luminance! That's what makes noncontrasting colors hard to read.
 
 In the real world, bad color contrast can be hard to spot. Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
 
@@ -189,7 +189,7 @@ Using semantic HTML also has a positive side effect: it can make your HTML and C
 
 Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
 
-Try it yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where the links and buttons lead?
+Try it yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where each link leads?
 
 "Click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like <span tabindex="-1">https://github.com/username/project/master/README.md</span>. That would be awful! 
 
@@ -311,10 +311,10 @@ As a review, here are the topics we've covered:
 * Accommodating different zoom levels
 * Color contrast
 * `alt` and `track`
-* Disabling `autoplay`
+* Video controls and disabling `autoplay`
 * Limiting animation and flashing effects
 * Semantic HTML
-* Tabindex and labeling links and buttons
+* Tabindex and labeling links
 * Content reading level
 
 A final note: accessibility shouldn't be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. 
