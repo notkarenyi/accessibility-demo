@@ -296,9 +296,11 @@ Many people are prone to seizures and can be harmed by websites with too much an
 
 Although web developers often aren't responsible for writing site content, 1) they can be and 2) they are often asked for feedback on content.
 
-English language learners, people with reading or language disabilities, and others are affected by unclear or complicated language. The standard for general-audience websites is to use language at an 8th-grade reading level. Avoid the passive voice and avoid convoluted sentence structure. Think about what words or phrases can be replaced with simpler ones. 
+Unclear or complicated language affect English language learners, people with reading disabilities, and others. For general-audience websites, the standard is to use language at an 8th-grade reading level.  
 
-Use correct spelling and grammar for more efficient communication.
+You'll also find that many words or phrases can be replaced with simpler ones. (Who wants to read 1000 words when you can get the same thing across in 500?) Towards this end, avoid the passive voice and avoid convoluted sentence structures.
+
+Finally, correct spelling and grammar aren't just for nitpickers: they allow for more efficient communication as well as greater professionalism.
 
 ## Conclusion
 
