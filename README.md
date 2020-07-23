@@ -259,6 +259,8 @@ The only situation where alt text can be redundant with surrounding text is when
 
 Videos do not support `alt` attributes. Use `title` instead or provide an external link to the video. 
 
+Finally, `CSS does not support alt text`. When using `background-image` and other CSS image-related properties, use decorative images only.
+
 In summary, when writing alt text, we should ask ourselves:
 
 1. Does this image/icon add context (or does it function as a link)?
