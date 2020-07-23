@@ -144,15 +144,17 @@ Sometimes we'll be tempted to place text over images. It's very difficult to mak
 
 ## Supporting Screenreaders
 
-This is probably the most important topic that we'll cover today&mdash;consideration of screen readers is almost impossible to spot visually. The following are often invisible to the average user, but can make or break the site experience for someone using a screen reader.
+This is probably the most important topic that we'll cover today&mdash;the following are often invisible to the average user, but can make or break the site experience for someone using a screen reader.
 
 ### Semantic HTML
 
-HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screenreaders rely on [semantic HTML](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure) tags to  navigate websites. In fact, *screenreaders ignore CSS and JS*.
+HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screenreaders rely on [semantic HTML](https://www.jungledisk.com/blog/2017/12/04/should-i-bother-with-semantic-html/) tags to  navigate websites. In fact, *screenreaders ignore CSS and JS*.
 
 This makes sense: CSS and JS are 99% visual anyway, and irrelevant to people with visual impairments. So, we have to consider what our sites would look like without the pretty packaging.
 
-How does semantic HTML work? After each section and before each heading, screenreaders pause to allow time to digest information. If the correct tags aren't used, screen readers will read out the whole page in one "breath", so to speak. Also, screenreaders turn headings into a sort of table of contents for previewing and skipping around the page. 
+How does semantic HTML work? After each section and before each heading, screenreaders pause to allow time to digest information. If the correct tags aren't used, screen readers will read out the whole page in one "breath", so to speak. Also, screenreaders turn headings into a sort of table of contents for previewing and skipping around the page.
+
+(Optional: download and [try out a screenreader](https://www.nvaccess.org/download/) for yourself.)
 
 ```html
 <!-- HTML file -->
@@ -175,21 +177,21 @@ How does semantic HTML work? After each section and before each heading, screenr
 
 ![Two links labeled Home and About](resources/semantic-html.PNG)
 
-Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screen readers' needs are often invisible.
+Notice that there's no visual difference between using many of these tags as opposed to a `div`, which is why I say that screenreader users' needs are often invisible.
 
 Did you know that `h1`, `h2`, etc. are actually semantic tags? It's bad practice to use heading tags to control font size and weight&mdash;that's what CSS is for! Think of heading tags as organizational tools for your website. Only the page title should be an `h1`. Subsections may be `h2`, `h3`, and so forth. 
 
-On the same note, avoid using `br` for spacing purposes between paragraphs. Use them meaningfully, like in poems or addresses.
+On the same note, use CSS instead of `br` for spacing purposes. `br` should be used meaningfully, like in poems or addresses.
 
 Using semantic HTML also has a positive side effect: it can make your HTML and CSS faster to write and easier to read, since you have predetermined tags instead of having to specify classes and IDs for each new element.
 
 ### Tabindex
 
-[Tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
+Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
 
 Try it yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where the links and buttons lead?
 
-"Click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like https://github.com/username/project/master/README.md. That would be awful! 
+"Click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like <span tabindex="-1">https://github.com/username/project/master/README.md</span>. That would be awful! 
 
 Instead, we should label links and buttons in an informative way. For the above example, a better link would be "[visit my project](https://github.com/electricdinosaurs/accessibility-demo/master/README.md)". Descriptive labels allow the user to know what to expect when they visit a link.
 
@@ -216,11 +218,11 @@ Instead, we should label links and buttons in an informative way. For the above 
 
 ![An informative button that says Log in](resources/login-button.PNG)
 
-We should organize links and buttons in a meaningful order. This is relatively context-dependent, but as an example, "Create Account" and "Log In" are usually adjacent to each other. It wouldn't make sense to have these links separated by three or four other links on the page.
+Keeping tabindex in mind, we should organize links and buttons in a meaningful order. This is relatively context-dependent, but as an example, "Create Account" and "Log In" are usually adjacent to each other. It wouldn't make sense to have these links separated by several other links on the page, just like it wouldn't make sense to have "Epilogue" next to "Introduction" in a book.
 
 ### Language Specification
 
-Screen readers are preprogrammed voices that read page content for users. They don't automatically know what language a website is written in (by language I mean human language, not programming language), which can result in bad pronunciation. Specify each page's main language using the appropriate language code:
+Screenreaders are preprogrammed voices that read page content for users. Bad pronunciation can happen when it doesn't know what language a website is written in (by language I mean human language, not programming language). We can help out by specifying each page's main language using the appropriate language code:
 
 ```html
 <!-- HTML file -->
@@ -230,15 +232,15 @@ Screen readers are preprogrammed voices that read page content for users. They d
 ```
 ## Images and Videos
 
-Embedded media can be difficult to consume for many populations and for many reasons. Visual elements usually require a text alternative.
+Embedded media can be difficult to consume for many populations and for many reasons. Any visual element usually requires a text alternative.
 
 ### Alt text
 
-You've seen alt text before, which is displayed when an image file fails to load. It is also read by screen readers (see [Supporting Screen Readers](#supporting-screen-readers)). 
+You've seen alt text before, which is displayed when an image file fails to load. It's also read by screenreaders. 
 
 Always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. 
 
-A good rule of thumb is if the image adds context to the page that isn't already present in surrounding text, then alt text is needed. If nothing new is added, then `alt=""` is okay. (You should not omit the `alt` attribute altogether.) 
+A good rule of thumb is if the image adds context to the page that isn't already present in surrounding text, then alt text is needed. If nothing new is added, then `alt=""` is okay. (Don't omit the `alt` attribute altogether.) 
 
 ```html 
 <!-- HTML file -->
@@ -259,7 +261,7 @@ Videos do not support `alt` attributes. Use `title` instead or provide an extern
 
 ### Transcripts 
 
-English language learners and people with hearing impairments often have difficulty following audio or video elements. Transcripts and subtitles are also useful in noisy environments or when skipping through media to find specific information. 
+English language learners and people with hearing impairments can have difficulty following audio or video elements. Transcripts and subtitles are also useful in noisy environments or when skipping through media to find specific information. 
 
 WebVTT files are the standard for closed captions. We can include these with the `track` tag, and specify `kind = subtitle` and `label` using the appropriate language. 
 
@@ -349,12 +351,10 @@ Appearance
 
 Supporting Screenreaders
 * [Semantic HTML (MDN)](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
-* [More semantic HTML](https://www.jungledisk.com/blog/2017/12/04/should-i-bother-with-semantic-html/)
 * [Semantic HTML flowchart (HTML5 Doctor)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.png)
 * [Tabindex (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
-* [Hyperlink accessibility & tab index (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
+* [Hyperlink accessibility (Yale)](https://usability.yale.edu/web-accessibility/articles/links)
 * [Alt text (WebAIM)](https://webaim.org/techniques/alttext/)
-* [Download and test out the NVDA screenreader](https://www.nvaccess.org/download/)
 
 Images and Videos
 * [Video attributes (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
