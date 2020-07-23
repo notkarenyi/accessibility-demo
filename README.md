@@ -2,14 +2,13 @@
 
 ## Overview
 
-Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to use your familiarity with accessibility guidelines, with the help of convenient tools, to evaluate websites.
+Welcome to Karen's introduction to accessibility on the web! After this workshop, you should have a basic understanding of what kinds of needs we should be meeting as web developers. You should be able to evaluate websites using your familiarity with accessibility guidelines, with the help of convenient tools.
 
-This workshop assumes an intermediate working knowledge of HTML and CSS. Unlike previous lessons, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you haven't seen some of this code from Matt and Leo yet&mdash;these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
+This workshop assumes an intermediate knowledge of HTML and CSS. Unlike previous lessons, it's less about coding, and more about seeing the tools you've learned in a new way. Don't worry if you haven't seen some of this code from Matt and Leo yet&mdash;these ideas are important to keep in mind when you start to use more in-depth HTML and CSS.
 
 ## Table of Contents
 
 * [What Does Accessibility Involve?](#what-does-accessibility-involve)
-  <!-- * [Josie Bruin's Story](#josie-bruins-story) -->
 * [Appearance](#appearance)
   * [Fonts and Font Sizes](#fonts-and-font-sizes)
   * [Zooming In](#zooming-in)
@@ -89,7 +88,7 @@ Fonts can still look too small or too large at these sizes, so adjust as needed.
 
 ![A relatively larger font, even at 16px](resources/lucida.PNG)
 
-Micro typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like on the ends of the Ts in the Lucida example above.) Sans serif fonts like Arial are also popular because they look sleek and modern. 
+Mini typography lesson: serif fonts like Times New Roman are often used in body text, because serifs aid the eye in reading text. (Serifs are the little hooks on the ends of letters, like on the ends of the Ts in the Lucida example above.) Sans serif fonts like Arial are also popular because they look sleek and modern. 
 
 We stick to basic serif and sans serif fonts because using display (aka fancy) fonts in body text slows down the brain's processing of text.  
 
@@ -99,7 +98,7 @@ A good rule of thumb is to copy a paragraph of a random article into your chosen
 
 Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. 
 
-Avoid making the user have to scroll horizontally--the text should wrap to fit the window size. `whitespace: normal` should be the default, but if text is not wrapping correctly, try explicitly setting this property.
+Horizontal scrolling should be avoided at all costs. One way horizontal scrolling can unintentionally happen is if our text isn't wrapping correctly inside a container. `whitespace: normal` should be the default, but if things are looking funky, try explicitly setting this property.
 
 ```css
 /* CSS file */
@@ -108,7 +107,7 @@ p {
 }
 ```
 
-![Text that cuts off at the edge.](resources/nowrap.PNG)
+![Text that cuts off at the edge of the container.](resources/nowrap.PNG)
 
 ```css
 /* CSS file */
@@ -117,29 +116,29 @@ p {
 }
 ```
 
-![Text that does not cut off at the edge.](resources/normal.PNG)
+![Text that wraps nicely when it reaches the end of the container.](resources/normal.PNG)
 
 ### Color Contrast 
 
-Color blindness affects 1 in 12 men and 1 in 200 women worldwide. As a result, some people have difficulty comfortably reading text against a background without a sufficient level of color contrast. 
+Color blindness affects 1 in 12 men and 1 in 200 women worldwide. For these people, it can be hard to read text against a noncontrasting background. 
 
 What does color contrast mean, exactly?
 
-Technically, there are three types of contrast: hue, luminance, and saturation. What we're mainly addressing here is luminance contrast, since high hue contrast without high luminance contrast is usually awful. The difference between the three is illustrated below in an Adobe Photoshop properties panel.
+Technically, there are three types of contrast: hue, luminance, and saturation. The difference between the three can be found in any Adobe Photoshop properties panel:
 
 ![Photoshop properties panel: Hue (a range covering ROYGBIV), luminance (brightness), and saturation ("colorfulness")](resources/hsl.png)
 
-Take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
-
-Now, imagine if you sucked all the color out of the red and the green. The desaturated example shows why green on red was so ugly: it's because the two colors are too similar in luminance! This is what makes noncontrasting colors hard to read.
+What we're mainly addressing here is luminance contrast, since high hue contrast without high luminance contrast is usually not good. Take the following example of green text on a red background. Even though red and green have very different hues, you can see that the effect is still pretty unpleasant. 
 
 ![Red text on green background. A desaturated version of the image is even more difficult to read.](resources/contrast-calculation.png)
+
+What's up with the second image? That's what would happen if you sucked all the color out of the red and the green. This desaturated example shows why green on red was so ugly: it's because the two colors are too similar in luminance! That's what makes noncontrasting colors hard to read.
 
 In the real world, bad color contrast can be hard to spot. Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
 
 ![The WebAIM color contrast checker](resources/color-contrast.PNG)
 
-Sometimes, we will be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
+Sometimes we'll be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
 
 ![Some text placed over an image, which is very difficult to read.](resources/image-text.png)
 
@@ -149,7 +148,7 @@ This is probably the most important topic that we'll cover today&mdash;considera
 
 ### Semantic HTML
 
-HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screenreaders rely on these tags to  navigate websites. In fact, *screenreaders ignore CSS and JS*.
+HTML has special tags for common structural elements on a website, from `button` to `article` to `footer`. These exist for a reason! Screenreaders rely on [semantic HTML](http://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure) tags to  navigate websites. In fact, *screenreaders ignore CSS and JS*.
 
 This makes sense: CSS and JS are 99% visual anyway, and irrelevant to people with visual impairments. So, we have to consider what our sites would look like without the pretty packaging.
 
@@ -186,13 +185,13 @@ Using semantic HTML also has a positive side effect: it can make your HTML and C
 
 ### Tabindex
 
-Tabindex refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
+[Tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) refers to tabbing through the buttons or links (or "focusable" elements) on a page using the Tab key on the keyboard. This feature can be used by people navigating by keyboard, as well as people using screen readers. 
 
 Try it yourself: stop here and press "Tab" until you have navigated all the "tabbable" elements on the page. Imagine that you are using a screenreader, so you can't see the context around each link as you're doing this. If you read just the highlighted text as you tab around the page, can you still tell where the links and buttons lead?
 
 "Click here" and other phrases without context can be confusing to people who are navigating a site by the links only. Even worse, imagine a screen reader reading a raw link like https://github.com/username/project/master/README.md. That would be awful! 
 
-Instead, we should label links and buttons in an informative way. For the above example, a better link would be "[visit my project](https://github.com/electricdinosaurs/accessibility-demo/edit/master/README.md)". Descriptive labels allow the user to know what to expect when they visit a link.
+Instead, we should label links and buttons in an informative way. For the above example, a better link would be "[visit my project](https://github.com/electricdinosaurs/accessibility-demo/master/README.md)". Descriptive labels allow the user to know what to expect when they visit a link.
 
 ```html
 <!-- HTML file -->
