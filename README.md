@@ -240,7 +240,9 @@ You've seen alt text before, which is displayed when an image file fails to load
 
 Always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. 
 
-A good rule of thumb is if the image adds context to the page that isn't already present in surrounding text, then alt text is needed. If nothing new is added, then `alt=""` is okay. (Don't omit the `alt` attribute altogether.) 
+A good rule of thumb is if the image adds context to the page that isn't already present in surrounding text, then alt text is needed. If nothing new is added, then `alt=""` is okay. 
+
+Why can't we just omit the `alt` attribute? In the absence of alt text, screenreaders may attempt to read the file name instead.
 
 ```html 
 <!-- HTML file -->
