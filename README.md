@@ -338,7 +338,7 @@ Want to learn about AA versus AAA standards, input errors, and more? Check out t
 
 * [Elsevier guidelines](https://www.elsevier.com/about/policies/accessibility)
 * [Yale guidelines](https://usability.yale.edu/web-accessibility/articles)
-* [HTML Accessibility (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
+* [MDN guidelines](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
 * [w3 guidelines](https://www.w3.org/TR/WCAG21)
 
 ## Reference Links
