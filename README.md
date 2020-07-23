@@ -282,7 +282,7 @@ Include the `controls` attribute to allow access to volume controls, video pause
 
 Autoplay can be disorienting for users, as well as annoying (have you ever tried to find that one tab that randomly starts playing music? Yeah).
 
-The `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay = false` will not work.
+The `autoplay` attribute for `video` tags is an "opt-in" feature. If for some reason this attribute is present in your code, you have to delete it in order to disable autoplay. Setting `autoplay=false` will not work.
 
 Similarly, allow users to pause and navigate slideshows&mdash;it can be distracting to see a constantly sliding slideshow when you're trying to focus on a different part of the page. Plus, many slideshows move too fast for some users to read each slide. 
 
@@ -308,7 +308,7 @@ It might seem that there are suddenly a million things to worry about that you d
 
 As a review, here are the topics we've covered:
 * Fonts and font sizes
-* Accommodating zooming in
+* Accommodating different zoom levels
 * Color contrast
 * `alt` and `track`
 * Disabling `autoplay`
@@ -317,11 +317,11 @@ As a review, here are the topics we've covered:
 * Tabindex and labeling links and buttons
 * Content reading level
 
-One final note: accessibility should not be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. 
+A final note: accessibility shouldn't be an afterthought. You'll make it easier for yourself and your users if you think about it early on: when you're picking your fonts and color palette, when you're creating elements in HTML, and when you're structuring the flow of your website. 
 
 Want to put your new knowledge into practice? Start out by turning a critical eye on your [portfolio task](https://github.com/uclaacm/learning-lab-crash-course-su20/blob/master/task-1-portfolio/README.md) from earlier in this course, as well as any other websites you may have made. Use the tools below to help you make your website beautiful *and* accessible for all users! 
 
-Or, check out this [anti-accessibility example website](https://electricdinosaurs.github.io/accessibility-demo/) I made that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
+Or, check out the [anti-accessibility example website](https://electricdinosaurs.github.io/accessibility-demo/) attached to this repository that breaks all of the rules we mentioned. Try forking the project or playing around in the browser inspector mode to see how you can make it less awful. 
 
 ## Accessibility Checkers
 
