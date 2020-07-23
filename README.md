@@ -236,7 +236,7 @@ Embedded media can be difficult to consume for many populations and for many rea
 
 ### Alt text
 
-You've seen alt text before, which is displayed when an image file fails to load. It's also read by screenreaders. 
+You've seen alt text before, which is displayed when an image file fails to load. It's also read by <span tabindex="-1">[screenreaders](#supporting-screenreaders)</span>. 
 
 Always provide alt text for images that have semantic meaning. For example: a decorative background image of a stripe pattern probably does not need alt text, but an illustrative image of the company's logo probably does. 
 
@@ -249,7 +249,7 @@ A good rule of thumb is if the image adds context to the page that isn't already
 
 ![ACM logo](resources/acm-logo.png)
 
-Writing good alt text takes a little thought. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is, even to screen readers. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
+Writing good alt text takes a little thought. Think of it as similar to a caption, only as brief as possible. For example, do not write "Image of..." or "Graphic of..." since it's usually obvious what the element is. However, "Painting of..." may be used since the user would not know this if the image had failed to load. 
 
 Be accurate when describing image content&mdash;we shouldn't provide information that is not present in the media. 
 
@@ -263,9 +263,9 @@ Videos do not support `alt` attributes. Use `title` instead or provide an extern
 
 English language learners and people with hearing impairments can have difficulty following audio or video elements. Transcripts and subtitles are also useful in noisy environments or when skipping through media to find specific information. 
 
-WebVTT files are the standard for closed captions. We can include these with the `track` tag, and specify `kind = subtitle` and `label` using the appropriate language. 
+WebVTT files are the standard for closed captions. (This will be familiar if you've read <span tabindex="-1">[Lesson 8](https://github.com/uclaacm/learning-lab-crash-course-su20/tree/master/08-intro-figma)</span>.) We can include these with the `track` tag, and specify `kind = subtitle` and `label` using the appropriate language. 
 
-`srclang` uses a language code to specify the type of data used (see [Language Specification](#language-specification)), while `label` is meant to help the user choose the correct subtitles.
+`srclang` uses a language code to specify the type of data used <span tabindex="-1">(see [Language Specification](#language-specification)</span>), while `label` is meant to help the user choose the correct subtitles.
 
 Include the `controls` attribute to allow access to volume controls, video pause and playback, existing subtitles and transcripts, and more.
 
