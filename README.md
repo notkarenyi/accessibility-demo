@@ -11,6 +11,7 @@ This workshop assumes an intermediate knowledge of HTML and CSS. Unlike previous
 * [What Does Accessibility Involve?](#what-does-accessibility-involve)
 * [Appearance](#appearance)
   * [Fonts and Font Sizes](#fonts-and-font-sizes)
+  * [Line Height](#line-height)
   * [Zoom Levels](#zoom-levels)
   * [Color Contrast](#color-contrast)
 * [Supporting Screenreaders](#supporting-screenreaders)
@@ -53,17 +54,21 @@ We'll start with the visual appearance of websites, since most of us will alread
 
 ### Fonts and Font Sizes
 
-Have you ever visited a website with an uncomfortably small or weirdly large font? Pretty annoying, right? Fortunately, someone was smart enough to come up with standard font sizes for mobile and desktop:
+Have you ever visited a website with an uncomfortably small or weirdly large font? Pretty annoying, right? Fortunately, someone was smart enough to come up with standard font sizes for mobile and desktop. (The base font size for the page should generally be specified in the HTML root node. Overrides can then be applied for more specific selectors, whether you're using px or <span tabindex="-1">[em or rem](https://webdesign.tutsplus.com/tutorials/comprehensive-guide-when-to-use-em-vs-rem--cms-23984)</span>.) 
 
 ```css
 /* CSS file */
 /* 768px is a common breakpoint for smartphones */
   @media all and (max-width: 768px) {
-    font-size: 16px;
+    html {
+     font-size: 16px;
+    }
   }
 
   @media all and (min-width: 769px) {
-    font-size: 18px;
+    html {
+     font-size: 18px;
+    }
   }
 ```
 Fonts can still look too small or too large at these sizes, so adjust as needed. 
@@ -93,6 +98,18 @@ Mini typography lesson: serif fonts like Times New Roman are often used in body 
 We stick to basic serif and sans serif fonts because using display (aka fancy) fonts in body text slows down the brain's processing of text.  
 
 A good rule of thumb is to copy a paragraph of a random article into your chosen font, and see if you can easily scan the paragraph. If not, it's probably not a good choice for your website.
+
+### Line Height
+
+A short note on line height: closely packed paragraphs of text can be really awful to read! The standard for paragraph text (as opposed to headings and other text) says that we should have a line height at least 1.5x as large as our font size.
+
+```css
+/* CSS file */
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+```
 
 ### Zoom Levels
 
