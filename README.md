@@ -21,7 +21,7 @@ This workshop assumes an intermediate knowledge of HTML and CSS. Unlike previous
   * [Alt text](#alt-text)
   * [Transcripts](#transcripts)
   * [Autoplay](#autoplay)
-* [Animations](#animations)
+  * [Animations](#animations)
 * [Content Reading Level](#content-reading-level)
 * [Conclusion](#conclusion)
 * [Accessibility Checkers](#accessibility-checkers)
