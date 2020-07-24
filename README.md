@@ -21,7 +21,7 @@ This workshop assumes an intermediate knowledge of HTML and CSS. Unlike previous
   * [Alt text](#alt-text)
   * [Transcripts](#transcripts)
   * [Autoplay](#autoplay)
-* [Animations](#animations)
+  * [Animations](#animations)
 * [Content Reading Level](#content-reading-level)
 * [Conclusion](#conclusion)
 * [Accessibility Checkers](#accessibility-checkers)
@@ -36,7 +36,7 @@ To create the best user experience, we should be comfortable with constantly ada
 
 For many, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for an equally important population, these features can make or break their experience with your website. 
 
-These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
+These users experience a range of needs, including colorblindness, use of a screenreader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
 
 Why is this so important, you ask?
 
@@ -96,9 +96,11 @@ A good rule of thumb is to copy a paragraph of a random article into your chosen
 
 ### Zoom Levels
 
-Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. 
+Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news.
 
-Horizontal scrolling should be avoided at all costs. One way horizontal scrolling can unintentionally happen is if our text isn't wrapping correctly inside a container. `whitespace: normal` should be the default, but if things are looking funky, try explicitly setting this property.
+Be careful when using `position: absolute` and other fixed position values because they can result in some unintentional effects in different screen sizes and zoom levels. Using flexbox and other automatic layouts can help prevent this. 
+
+Horizontal scrolling should be avoided because users always expect vertical scrolling. One way horizontal scrolling can unintentionally happen is if our text isn't wrapping correctly inside a container. `whitespace: normal` should be the default, but if things are looking funky, try explicitly setting this property.
 
 ```css
 /* CSS file */
@@ -134,11 +136,15 @@ What we're mainly addressing here is luminance contrast, since high hue contrast
 
 What's up with the second image? That's what would happen if you sucked all the color out of the red and the green. This desaturated example shows why the first image was so ugly: it's because the two colors are too similar in luminance! That's what makes noncontrasting colors hard to read.
 
+**Important: these examples are for illustrative purposes and are an oversimplification of colorblindness.**
+
 In the real world, bad color contrast can be hard to spot. Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
 
 ![The WebAIM color contrast checker](resources/color-contrast.PNG)
 
 Sometimes we'll be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
+
+Large text literally has larger shapes, which makes it slightly easier to see/read. In the color contrast checker image, you can see that large text has slightly more lax standards. If you must place text over images, larger text is a better way to go.
 
 ![Some text placed over an image, which is very difficult to read.](resources/image-text.png)
 
@@ -298,7 +304,7 @@ Similarly, allow users to pause and navigate slideshows&mdash;it can be distract
 
 Since slideshows are usually made using JavaScript, we won't cover how to do it here.
 
-## Animations
+### Animations
 
 Many people are prone to seizures and can be harmed by websites with too much animation. This means limiting the number of GIFs, and avoiding flashing elements at all costs (the w3 standard is three flashes or less per second).
 
@@ -375,3 +381,4 @@ Images and Videos
 
 Bonus (not covered today)
 * [External links](https://codersblock.com/blog/external-links-new-tabs-and-accessibility/)
+* [Gifffer (a JS library that allows pausing GIFs!](https://github.com/krasimir/gifffer)
