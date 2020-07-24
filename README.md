@@ -96,9 +96,11 @@ A good rule of thumb is to copy a paragraph of a random article into your chosen
 
 ### Zoom Levels
 
-Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news and we should take steps to fix that. 
+Users with visual impairments, such as the elderly, often need to zoom in on 16px or 18px text in order to be able to read clearly. As you're developing your website, try zooming in up to 200% and see if the website is still usable. If elements are jumping around or hiding text at this zoom level, that's bad news.
 
-Horizontal scrolling should be avoided at all costs. One way horizontal scrolling can unintentionally happen is if our text isn't wrapping correctly inside a container. `whitespace: normal` should be the default, but if things are looking funky, try explicitly setting this property.
+Be careful when using `position: absolute` and other fixed position values because they can result in some unintentional effects in different screen sizes and zoom levels. Using flexbox and other automatic layouts can help prevent this. 
+
+Horizontal scrolling should be avoided because users always expect vertical scrolling. One way horizontal scrolling can unintentionally happen is if our text isn't wrapping correctly inside a container. `whitespace: normal` should be the default, but if things are looking funky, try explicitly setting this property.
 
 ```css
 /* CSS file */
