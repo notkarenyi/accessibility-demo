@@ -36,7 +36,7 @@ To create the best user experience, we should be comfortable with constantly ada
 
 For many, poor accessibility features are an inconvenience at worst or even unnoticeable at best. But for an equally important population, these features can make or break their experience with your website. 
 
-These users experience a range of needs, including colorblindness, use of a screen reader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
+These users experience a range of needs, including colorblindness, use of a screenreader (for people with visual impairments, people with learning disabilities, etc.), poor vision (for the elderly, people with visual impairments, etc.), susceptibility to seizures, and more. 
 
 Why is this so important, you ask?
 
@@ -300,7 +300,7 @@ Similarly, allow users to pause and navigate slideshows&mdash;it can be distract
 
 Since slideshows are usually made using JavaScript, we won't cover how to do it here.
 
-## Animations
+### Animations
 
 Many people are prone to seizures and can be harmed by websites with too much animation. This means limiting the number of GIFs, and avoiding flashing elements at all costs (the w3 standard is three flashes or less per second).
 
