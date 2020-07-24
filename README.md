@@ -136,11 +136,15 @@ What we're mainly addressing here is luminance contrast, since high hue contrast
 
 What's up with the second image? That's what would happen if you sucked all the color out of the red and the green. This desaturated example shows why the first image was so ugly: it's because the two colors are too similar in luminance! That's what makes noncontrasting colors hard to read.
 
+**Important: these examples are for illustrative purposes and are an oversimplification of colorblindness.**
+
 In the real world, bad color contrast can be hard to spot. Thankfully, you don't have to calculate any ratios yourself. Color-contrast checkers help us make sure that our text and visual elements pass standards. 
 
 ![The WebAIM color contrast checker](resources/color-contrast.PNG)
 
 Sometimes we'll be tempted to place text over images. It's very difficult to make sure that each of the different color combinations in these instances pass standards! So it's best to avoid background images when the text is essential to understanding or using the site.
+
+Large text literally has larger shapes, which makes it slightly easier to see/read. In the color contrast checker image, you can see that large text has slightly more lax standards. If you must place text over images, larger text is a better way to go.
 
 ![Some text placed over an image, which is very difficult to read.](resources/image-text.png)
 
@@ -377,3 +381,4 @@ Images and Videos
 
 Bonus (not covered today)
 * [External links](https://codersblock.com/blog/external-links-new-tabs-and-accessibility/)
+* [Gifffer (a JS library that allows pausing GIFs!](https://github.com/krasimir/gifffer)
