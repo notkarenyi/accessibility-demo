@@ -55,6 +55,12 @@ img, video {
     text-align: left;
 }
 
+#nav img {
+    animation-name: gradient;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
 p, h2 {
     padding: 0 20px;
 }
@@ -91,4 +97,13 @@ a:hover {
 
 .inline {
     display: inline;
+}
+
+@keyframes gradient {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
